@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBF632LQK9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XBF632LQK9');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beauty & BEXmart - Spesial Natal & Tahun Baru 2025</title>
+
+    <!-- === FONT COMBINATION === -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(180deg, #0a1628, #1a2847, #2d3e5f);
+        margin: 0;
+        padding: 0;
+        color: #333;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* ===== SNOWFLAKES ANIMATION ===== */
+      .snowflake {
+        position: fixed;
+        top: -10px;
+        z-index: 9999;
+        user-select: none;
+        cursor: default;
+        animation-name: snowfall;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        color: #fff;
+        font-size: 1em;
+        opacity: 0.8;
+      }
+
+      @keyframes snowfall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+
+      /* ===== HEADER ===== */
+      header {
+        background: linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #ffd700 100%);
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        border-bottom: 5px solid #ffd700;
+        animation: fadeDown 1s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Christmas lights effect */
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: linear-gradient(90deg, 
+          #ff0000 0%, #00ff00 20%, #ffff00 40%, 
+          #ff0000 60%, #00ff00 80%, #ffff00 100%);
+        animation: lightsMove 2s linear infinite;
+      }
+
+      @keyframes lightsMove {
+        0% { opacity: 1; }
+        50% { opacity: 0.6; }
+        100% { opacity: 1; }
+      }
+
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-25px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 25px;
+        flex-wrap: nowrap;
+      }
+
+      .logo-wrapper img {
+        height: 65px;
+        max-width: 30%;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.4));
+        transition: all 0.3s ease;
+        animation: logoFloat 3s ease-in-out infinite;
+      }
+
+      @keyframes logoFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+
+      /* ===== SHIMMER TEXT ===== */
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        margin: 0;
+        letter-spacing: 1px;
+        background: linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #ffd700 25%,
+          #ffffff 50%,
+          #ffd700 75%,
+          #ffffff 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 3s linear infinite, textUp 1.2s ease-out;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+      }
+
+      @keyframes textUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      header p {
+        font-size: 17px;
+        margin-top: 15px;
+        color: #fff;
+        letter-spacing: 0.5px;
+        opacity: 0;
+        animation: fadeInText 1.8s ease forwards;
+        animation-delay: 0.5s;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      @keyframes fadeInText {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* ===== CONTENT ===== */
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 40px 25px 50px 25px;
+        background: linear-gradient(135deg, #fff 0%, #fffef8 100%);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(196, 30, 58, 0.2);
+        text-align: center;
+        animation: fadeIn 1s ease;
+        border: 3px solid #ffd700;
+        position: relative;
+      }
+
+      .container::before {
+        content: "🎄";
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        font-size: 30px;
+        animation: rotate 4s linear infinite;
+      }
+
+      .container::after {
+        content: "🎁";
+        position: absolute;
+        top: -15px;
+        right: 20px;
+        font-size: 30px;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .promo-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        background: linear-gradient(135deg, #c41e3a, #165b33);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 10px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+      }
+
+      .promo-subtitle {
+        font-size: 17px;
+        margin-top: 15px;
+        color: #555;
+        line-height: 1.8;
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ===== BUTTON GROUP ===== */
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 35px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: white;
+        padding: 16px 28px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        letter-spacing: 0.3px;
+        position: relative;
+        overflow: hidden;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      /* Soft glow effect */
+      @keyframes glowPulse {
+        0% {
+          box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+        }
+        100% {
+          box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+      }
+
+      /* ===== WhatsApp Button ===== */
+      .btn-wa {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        animation: glowPulse 2.5s infinite ease-in-out;
+      }
+
+      .btn-wa:hover {
+        background: linear-gradient(135deg, #20bd55, #0d7a6b);
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+      }
+
+      /* ===== WhatsApp Channel Button ===== */
+      .btn-channel {
+        background: linear-gradient(135deg, #1877f2, #0d5dbf);
+        animation: glowPulse 2.5s infinite ease-in-out;
+        animation-delay: 0.6s;
+      }
+
+      .btn-channel:hover {
+        background: linear-gradient(135deg, #0d5dbf, #084a99);
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 8px 25px rgba(24, 119, 242, 0.5);
+      }
+
+      /* ===== Instagram Button ===== */
+      .btn-instagram {
+        background: linear-gradient(135deg, #e1306c, #c13584, #833ab4);
+        animation: glowPulse 2.5s infinite ease-in-out;
+        animation-delay: 0.9s;
+      }
+
+      .btn-instagram:hover {
+        background: linear-gradient(135deg, #c13584, #833ab4, #5851db);
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 8px 25px rgba(225, 48, 108, 0.5);
+      }
+
+      /* ===== Christmas Red Button ===== */
+      .btn-red {
+        background: linear-gradient(135deg, #c41e3a, #8b1429);
+        animation: glowPulse 2.5s infinite ease-in-out;
+        animation-delay: 1.2s;
+      }
+
+      .btn-red:hover {
+        transform: scale(1.05) translateY(-2px);
+        background: linear-gradient(135deg, #a01828, #6e1020);
+        box-shadow: 0 8px 25px rgba(196, 30, 58, 0.5);
+      }
+
+      /* Hover shimmer overlay */
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.4);
+        transform: skewX(-20deg);
+        transition: all 0.5s;
+      }
+
+      .btn:hover::before {
+        left: 130%;
+        transition: all 0.6s;
+      }
+
+      /* ===== PROMO BANNER ===== */
+      .promo-banner {
+        background: linear-gradient(135deg, #165b33, #0d4023);
+        color: white;
+        padding: 25px;
+        border-radius: 15px;
+        margin: 35px 0;
+        box-shadow: 0 8px 25px rgba(22, 91, 51, 0.3);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+      }
+
+      .promo-banner h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 26px;
+        margin: 0 0 10px 0;
+        color: #ffd700;
+      }
+
+      .promo-banner p {
+        margin: 5px 0;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      /* ===== MAPS ===== */
+      .maps {
+        margin-top: 50px;
+      }
+
+      .maps h3 {
+        background: linear-gradient(135deg, #c41e3a, #165b33);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Playfair Display', serif;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      iframe {
+        width: 100%;
+        height: 420px;
+        border-radius: 15px;
+        border: 4px solid #ffd700;
+        box-shadow: 0 8px 25px rgba(196, 30, 58, 0.2);
+        transition: all 0.5s ease;
+      }
+
+      iframe:hover {
+        transform: scale(1.01);
+        box-shadow: 0 12px 35px rgba(196, 30, 58, 0.3);
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background: linear-gradient(135deg, #0a1628, #1a2847);
+        text-align: center;
+        padding: 25px;
+        font-size: 14px;
+        color: #ffd700;
+        border-top: 4px solid #ffd700;
+        letter-spacing: 0.5px;
+      }
+
+      /* ===== FLOATING WHATSAPP ===== */
+      .floating-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        z-index: 1000;
+        animation: floatBounce 3s ease-in-out infinite;
+        text-decoration: none;
+      }
+
+      .floating-whatsapp img {
+        width: 38px;
+        height: 38px;
+      }
+
+      @keyframes floatBounce {
+        0%, 100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-10px) scale(1.05);
+        }
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        .logo-wrapper {
+          gap: 20px;
+        }
+        .logo-wrapper img {
+          height: 50px;
+          max-width: 28%;
+        }
+        header h1 {
+          font-size: 28px;
+        }
+        .promo-title {
+          font-size: 26px;
+        }
+        .btn-group {
+          gap: 12px;
+        }
+        .btn {
+          padding: 14px 24px;
+          font-size: 14px;
+        }
+        iframe {
+          height: 320px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo-wrapper {
+          gap: 12px;
+        }
+        .logo-wrapper img {
+          height: 42px;
+          max-width: 26%;
+        }
+        header h1 {
+          font-size: 24px;
+        }
+        .promo-title {
+          font-size: 22px;
+        }
+        .btn {
+          padding: 12px 20px;
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== SNOWFLAKES ===== -->
+    <div class="snowflake" style="left: 10%; animation-duration: 10s;">❄</div>
+    <div class="snowflake" style="left: 20%; animation-duration: 12s; animation-delay: 1s;">❄</div>
+    <div class="snowflake" style="left: 30%; animation-duration: 9s; animation-delay: 2s;">❄</div>
+    <div class="snowflake" style="left: 40%; animation-duration: 11s;">❄</div>
+    <div class="snowflake" style="left: 50%; animation-duration: 13s; animation-delay: 1.5s;">❄</div>
+    <div class="snowflake" style="left: 60%; animation-duration: 10s; animation-delay: 0.5s;">❄</div>
+    <div class="snowflake" style="left: 70%; animation-duration: 12s;">❄</div>
+    <div class="snowflake" style="left: 80%; animation-duration: 9s; animation-delay: 2.5s;">❄</div>
+    <div class="snowflake" style="left: 90%; animation-duration: 11s; animation-delay: 1s;">❄</div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <div class="logo-wrapper">
+        <img src="Beauty Logo 1.png" alt="Beauty Logo" />
+        <img src="ceria.png f.png" alt="Ceria Logo" />
+        <img src="BEXMart Logo.png" alt="BEXmart Logo" />
+      </div>
+
+      <h1>🎄 Selamat Natal & Tahun Baru 2025! 🎊</h1>
+      <p>Rayakan dengan promo spesial & hadiah menarik di Beauty & BEXmart! ✨</p>
+    </header>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="container">
+      <h2 class="promo-title">🎁 Promo Akhir Tahun Spektakuler! 🎉</h2>
+      <p class="promo-subtitle">
+        Belanja produk kecantikan & kebutuhan harian dengan diskon besar-besaran! Dapatkan hadiah spesial untuk setiap pembelian. Jangan sampai kehabisan! 🌟
+      </p>
+
+      <div class="promo-banner">
+        <h3>⭐ PROMO SPESIAL NATAL & TAHUN BARU ⭐</h3>
+        <p>🎊 Diskon hingga 50% untuk produk pilihan</p>
+        <p>🎁 Gratis hadiah untuk pembelian minimal tertentu</p>
+        <p>✨ Bonus poin loyalty yang bisa ditukar hadiah</p>
+        <p>🎄 Pengiriman gratis untuk area Sulawesi Tenggara</p>
+      </div>
+
+      <div class="btn-group">
+        <a
+          href="https://wa.me/6285333365123?text=Halo%20Beauty!%20Saya%20mau%20tanya%20promo%20Natal%20%26%20Tahun%20Baru%20🎄"
+          target="_blank"
+          class="btn btn-wa"
+        >
+          <span>💬</span>
+          <span>Chat WhatsApp</span>
+        </a>
+        
+        <a
+          href="http://bit.ly/beautykendariWA"
+          target="_blank"
+          class="btn btn-channel"
+        >
+          <span>📢</span>
+          <span>Join Channel WA</span>
+        </a>
+        
+        <a
+          href="https://www.instagram.com/channel/AbbX8rC4psSIm-T3/"
+          target="_blank"
+          class="btn btn-instagram"
+        >
+          <span>📸</span>
+          <span>Follow Instagram</span>
+        </a>
+        
+        <a
+          href="https://www.google.com/maps/d/u/0/embed?mid=1NAvXEBN0ELLjiEbAoX8sD0zLWYva7GE&hl=id&ll=-4.497214576627072%2C122.21728927087588&z=10"
+          target="_blank"
+          class="btn btn-red"
+        >
+          <span>🛍️</span>
+          <span>Kunjungi Toko</span>
+        </a>
+      </div>
+
+      <div class="maps">
+        <h3>📍 Lokasi Semua Toko Kami</h3>
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1NAvXEBN0ELLjiEbAoX8sD0zLWYva7GE&hl=id&ll=-4.497214576627072%2C122.21728927087588&z=10"
+        ></iframe>
+      </div>
+    </div>
+
+    <footer>
+      🎄 © 2025 Beauty & BEXmart • Selamat Natal & Tahun Baru! • 100% Produk Original ✨
+    </footer>
+
+    <a
+      href="https://wa.me/6285333365123?text=Halo%20Beauty!%20Saya%20mau%20tanya%20promo%20Natal%20%26%20Tahun%20Baru%20🎄"
+      target="_blank"
+      class="floating-whatsapp"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WA"
+      />
+    </a>
+  </body>
+</html>

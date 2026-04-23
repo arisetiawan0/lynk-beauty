@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beauty & BEXmart</title>
+
+    <!-- === FONT COMBINATION === -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(180deg, #fff0f7, #ffe6f2);
+        margin: 0;
+        padding: 0;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* ===== HEADER ===== */
+      header {
+        background: linear-gradient(90deg, #ff66b2, #ff99cc);
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
+        border-bottom: 5px solid #ffb3d9;
+        animation: fadeDown 1s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-25px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 25px;
+        flex-wrap: nowrap;
+      }
+
+      .logo-wrapper img {
+        height: 65px;
+        max-width: 30%;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        transition: all 0.3s ease;
+      }
+
+      /* ===== SHIMMER TEXT ===== */
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 38px;
+        margin: 0;
+        letter-spacing: 0.8px;
+        background: linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #ffe6f9 25%,
+          #ffffff 50%,
+          #ffe6f9 75%,
+          #ffffff 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 3s linear infinite, textUp 1.2s ease-out;
+      }
+
+      @keyframes textUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      header p {
+        font-size: 16px;
+        margin-top: 12px;
+        color: #fffafc;
+        letter-spacing: 0.4px;
+        opacity: 0;
+        animation: fadeInText 1.8s ease forwards;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes fadeInText {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* ===== CONTENT ===== */
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 40px 25px 50px 25px;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 6px 22px rgba(255, 77, 166, 0.15);
+        text-align: center;
+        animation: fadeIn 1s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .promo-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+        color: #ff4da6;
+        margin-top: 10px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+      }
+
+      .promo-subtitle {
+        font-size: 17px;
+        margin-top: 12px;
+        color: #555;
+        line-height: 1.7;
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ===== BUTTON GROUP ===== */
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-top: 35px;
+      }
+
+      .btn {
+        display: inline-block;
+        color: white;
+        padding: 15px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.4s ease;
+        letter-spacing: 0.3px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Soft glow effect */
+      @keyframes glowPulse {
+        0% {
+          box-shadow: 0 0 10px rgba(255, 77, 166, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 25px rgba(255, 77, 166, 0.6);
+        }
+        100% {
+          box-shadow: 0 0 10px rgba(255, 77, 166, 0.3);
+        }
+      }
+
+      /* ===== WhatsApp Button ===== */
+      .btn-wa {
+        background: linear-gradient(90deg, #25d366, #20bd55);
+        animation: glowPulse 2.5s infinite ease-in-out;
+      }
+
+      .btn-wa:hover {
+        background: linear-gradient(90deg, #20bd55, #128c7e);
+        transform: scale(1.05);
+      }
+
+      /* ===== Pink Beauty Button ===== */
+      .btn-pink {
+        background: linear-gradient(90deg, #ff66b2, #ff99cc);
+        animation: glowPulse 2.5s infinite ease-in-out;
+        animation-delay: 1.2s;
+      }
+
+      .btn-pink:hover {
+        transform: scale(1.05);
+        background: linear-gradient(90deg, #ff4da6, #ff7fbf);
+      }
+
+      /* Hover shimmer overlay */
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.4);
+        transform: skewX(-20deg);
+        transition: all 0.5s;
+      }
+
+      .btn:hover::before {
+        left: 130%;
+        transition: all 0.6s;
+      }
+
+      /* ===== MAPS ===== */
+      .maps {
+        margin-top: 50px;
+      }
+
+      .maps h3 {
+        color: #ff4da6;
+        font-family: 'Playfair Display', serif;
+        font-size: 23px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      iframe {
+        width: 100%;
+        height: 420px;
+        border-radius: 14px;
+        border: 3px solid #ffe6f2;
+        box-shadow: 0 6px 18px rgba(255, 77, 166, 0.2);
+        transition: all 0.5s ease;
+      }
+
+      iframe:hover {
+        transform: scale(1.01);
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background: #fff0f7;
+        text-align: center;
+        padding: 18px;
+        font-size: 13px;
+        color: #666;
+        border-top: 3px solid #ffd6eb;
+        letter-spacing: 0.4px;
+      }
+
+      /* ===== FLOATING WHATSAPP ===== */
+      .floating-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        animation: pop 0.6s ease;
+      }
+
+      .floating-whatsapp img {
+        width: 35px;
+        height: 35px;
+      }
+
+      @keyframes pop {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        .logo-wrapper {
+          gap: 20px;
+        }
+        .logo-wrapper img {
+          height: 48px;
+          max-width: 28%;
+        }
+        header h1 {
+          font-size: 26px;
+        }
+        .promo-title {
+          font-size: 24px;
+        }
+        iframe {
+          height: 320px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo-wrapper {
+          gap: 10px;
+        }
+        .logo-wrapper img {
+          height: 38px;
+          max-width: 25%;
+        }
+        header h1 {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header>
+      <div class="logo-wrapper">
+        <img src="Beauty Logo 1.png" alt="Beauty Logo" />
+        <img src="ceria.png f.png" alt="Ceria Logo" />
+        <img src="BEXMart Logo.png" alt="BEXmart Logo" />
+      </div>
+
+      <h1>Hai Bestie! 💕</h1>
+      <p>Selamat datang di Beauty & BEXmart — tempat belanja favoritmu di Sulawesi Tenggara!</p>
+    </header>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="container">
+      <h2 class="promo-title">Belanja Hemat, Hadiah Dapat! 🎁</h2>
+      <p class="promo-subtitle">
+        Belanja produk kecantikan & kebutuhan harian makin seru, hemat, dan bisa dapat hadiah keren! 💖
+      </p>
+
+      <div class="btn-group">
+        <a
+          href="https://wa.me/6285333365123"
+          target="_blank"
+          class="btn btn-wa"
+          >💬 Hubungi via WhatsApp</a
+        >
+        <a
+          href="https://www.google.com/maps/d/u/0/embed?mid=1NAvXEBN0ELLjiEbAoX8sD0zLWYva7GE&hl=id&ll=-4.497214576627072%2C122.21728927087588&z=10"
+          target="_blank"
+          class="btn btn-pink"
+          >🛍️ Kunjungi Toko Sekarang</a
+        >
+      </div>
+
+      <div class="maps">
+        <h3>📍 Lokasi Semua Toko Kami</h3>
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1NAvXEBN0ELLjiEbAoX8sD0zLWYva7GE&hl=id&ll=-4.497214576627072%2C122.21728927087588&z=10"
+        ></iframe>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 Beauty & BEXmart • Semua Hak Dilindungi • 100% Produk Original
+    </footer>
+
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20Beauty!%20Saya%20mau%20tanya%20promo%20serem%20🎃"
+      target="_blank"
+      class="floating-whatsapp"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WA"
+      />
+    </a>
+  </body>
+</html>

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4EC54XYM4"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date()); gtag('config','G-Y4EC54XYM4');
+  </script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beauty & BEXmart – Official Links | Kendari</title>
+
+  <meta name="description" content="One stop shopping kecantikan, kesehatan & kebutuhan harian di Kendari. Temukan produk kosmetik, skincare, apotek & supermarket di Beauty dan BEXmart."/>
+  <meta property="og:title"       content="Beauty & BEXmart Kendari – Official Links"/>
+  <meta property="og:description" content="One stop shopping kecantikan, kesehatan & kebutuhan harian di Kendari."/>
+  <meta property="og:url"         content="https://beautykendari.id"/>
+  <meta property="og:type"        content="website"/>
+  <meta name="theme-color"        content="#fdf4f0"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    /* ══════════════════════════════════
+       CSS VARIABLES
+    ══════════════════════════════════ */
+    :root {
+      --rose:        #c2547a;
+      --rose-light:  #e8a0b8;
+      --rose-bg:     rgba(194,84,122,.09);
+      --rose-border: rgba(194,84,122,.22);
+
+      --gold:        #c9926a;
+      --gold-light:  #e8c4a0;
+      --gold-bg:     rgba(201,146,106,.12);
+      --gold-border: rgba(201,146,106,.3);
+
+      --blush:   #f9e8ee;
+      --cream:   #fdf4f0;
+      --petal:   #fce8f0;
+
+      --green:    #25D366;
+      --green-bg: rgba(37,211,102,.1);
+
+      --amber:    #c97d32;
+      --amber-bg: rgba(201,125,50,.1);
+
+      --teal:    #6db8b0;
+      --teal-bg: rgba(109,184,176,.1);
+
+      --shopee:        #ee4d2d;
+      --shopee-bg:     rgba(238,77,45,.09);
+      --shopee-border: rgba(238,77,45,.22);
+
+      --bg:       #fdf4f0;
+      --surface:  rgba(255,255,255,.82);
+      --surface2: rgba(255,255,255,.95);
+      --border:   rgba(194,84,122,.13);
+      --shadow:   0 2px 24px rgba(180,90,120,.08);
+      --shadow-lg:0 8px 40px rgba(180,90,120,.14);
+
+      --text:  #2d1820;
+      --muted: #a07888;
+      --soft:  #c4929f;
+
+      --r: 20px;
+
+      /* Fluid sizing */
+      --fs-h1:     clamp(28px, 6vw, 48px);
+      --fs-tag:    clamp(12px, 2vw, 14px);
+      --page-pad:  clamp(14px, 4vw, 28px);
+      --max-w:     520px;
+    }
+
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ══════════════════════════════════
+       BACKGROUND
+    ══════════════════════════════════ */
+    .bg-canvas {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 55% at 10% -10%,  rgba(240,180,200,.35) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 90%  110%, rgba(201,146,106,.2)  0%, transparent 50%),
+        radial-gradient(ellipse 80% 70% at 50%  50%,  rgba(252,232,240,.5)  0%, transparent 70%),
+        linear-gradient(160deg, #fff8f5 0%, #fdf0f5 40%, #fdf4f0 100%);
+    }
+
+    .petal {
+      position: fixed; z-index: 0; pointer-events: none;
+      border-radius: 60% 40% 55% 45%; opacity: 0;
+      animation: drift linear infinite;
+    }
+    @keyframes drift {
+      0%   { transform: translateY(110vh) rotate(0deg)   scale(1);   opacity: 0; }
+      5%   { opacity: .45; }
+      95%  { opacity: .25; }
+      100% { transform: translateY(-12vh)  rotate(340deg) scale(.7); opacity: 0; }
+    }
+
+    /* ══════════════════════════════════
+       LAYOUT — MOBILE FIRST
+    ══════════════════════════════════ */
+    .page {
+      width: 100%;
+      max-width: var(--max-w);
+      padding: clamp(32px, 6vw, 56px) var(--page-pad) clamp(40px, 6vw, 60px);
+      position: relative; z-index: 10;
+      display: flex; flex-direction: column;
+    }
+
+    /* ── DESKTOP WIDE: two-column shell ── */
+    @media (min-width: 900px) {
+      :root { --max-w: 960px; }
+
+      .page {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        column-gap: 36px;
+        align-items: start;
+      }
+
+      /* header spans full width */
+      .header         { grid-column: 1 / -1; }
+      /* left col */
+      .col-left        { grid-column: 1; display: flex; flex-direction: column; }
+      /* right col */
+      .col-right       { grid-column: 2; display: flex; flex-direction: column; }
+    }
+
+    /* ══════════════════════════════════
+       HEADER
+    ══════════════════════════════════ */
+    .header {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center;
+      padding-bottom: clamp(28px, 5vw, 44px);
+      animation: rise .8s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    .logo-pill {
+      display: flex; align-items: center;
+      gap: clamp(8px, 2vw, 13px);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 60px;
+      padding: clamp(9px, 2vw, 12px) clamp(18px, 4vw, 28px);
+      margin-bottom: clamp(20px, 4vw, 30px);
+      backdrop-filter: blur(12px);
+    }
+    .logo-pill img {
+      height: clamp(20px, 3.5vw, 26px);
+      width: auto; object-fit: contain; flex-shrink: 0;
+    }
+    .logo-div {
+      width: 1px; height: 18px;
+      background: var(--rose-border);
+      flex-shrink: 0;
+    }
+
+    .eyebrow {
+      font-size: clamp(9px, 1.5vw, 10px);
+      font-weight: 600; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--rose);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: var(--fs-h1);
+      font-weight: 700; line-height: 1.1; margin-bottom: 12px;
+      color: var(--text);
+    }
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: var(--fs-tag);
+      color: var(--muted); line-height: 1.7;
+      max-width: 340px; margin: 0 auto 24px; font-weight: 400;
+    }
+
+    /* Status bar */
+    .status-bar {
+      display: inline-flex; align-items: center;
+      gap: clamp(10px, 2.5vw, 20px);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 50px;
+      padding: 10px clamp(16px, 3vw, 24px);
+      backdrop-filter: blur(10px);
+      flex-wrap: nowrap;        /* keep on one line on most screens */
+    }
+    .s-item {
+      display: flex; align-items: center;
+      gap: 7px; font-size: clamp(11px, 2vw, 12.5px);
+      color: var(--muted); font-weight: 500;
+      white-space: nowrap;
+    }
+    .s-divider { width: 1px; height: 14px; background: var(--border); flex-shrink: 0; }
+
+    .dot-ring { position: relative; width: 9px; height: 9px; flex-shrink: 0; }
+    .dot-ring b { display: block; width: 9px; height: 9px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+    .dot-ring::after {
+      content: ''; position: absolute; inset: -5px; border-radius: 50%;
+      border: 1.5px solid #4ade80; opacity: 0;
+      animation: sonar 2.4s infinite ease-out;
+    }
+    @keyframes sonar { 0%{opacity:.6;transform:scale(.4)} 100%{opacity:0;transform:scale(2)} }
+
+    /* ══════════════════════════════════
+       SECTION WRAPPER
+    ══════════════════════════════════ */
+    .section { margin-bottom: clamp(16px, 3vw, 22px); animation: rise .7s cubic-bezier(.22,1,.36,1) both; }
+    .sec-delay-1{animation-delay:.08s}
+    .sec-delay-2{animation-delay:.15s}
+    .sec-delay-3{animation-delay:.22s}
+    .sec-delay-4{animation-delay:.29s}
+    .sec-delay-5{animation-delay:.36s}
+    .sec-delay-6{animation-delay:.43s}
+
+    .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .sec-title {
+      font-size: clamp(9px, 1.5vw, 10px);
+      font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--rose); white-space: nowrap;
+    }
+    .sec-line {
+      flex: 1; height: 1px;
+      background: linear-gradient(to right, var(--rose-border), transparent);
+    }
+
+    /* ══════════════════════════════════
+       CARD
+    ══════════════════════════════════ */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    /* ══════════════════════════════════
+       ROW BUTTON
+    ══════════════════════════════════ */
+    .row {
+      display: flex; align-items: center; gap: 14px;
+      padding: clamp(13px, 2.5vw, 16px) clamp(14px, 3vw, 20px);
+      text-decoration: none; color: var(--text);
+      transition: background .2s;
+      cursor: pointer; border: none; background: none; width: 100%;
+      font-family: 'Jost', sans-serif;
+    }
+    .card .row + .row { border-top: 1px solid var(--border); }
+    .row:hover  { background: rgba(194,84,122,.05); }
+    .row:active { background: rgba(194,84,122,.10); }
+
+    .row-icon {
+      width: clamp(36px, 5vw, 42px);
+      height: clamp(36px, 5vw, 42px);
+      border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: clamp(16px, 2.5vw, 19px);
+      flex-shrink: 0;
+    }
+    .row-body    { flex: 1; text-align: left; min-width: 0; }
+    .row-title   { font-size: clamp(13px, 2.2vw, 14.5px); font-weight: 600; color: var(--text); line-height: 1.25; }
+    .row-desc    { font-size: clamp(10.5px, 1.8vw, 12px); color: var(--muted); margin-top: 2px; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .row-arrow   { color: var(--soft); font-size: 11px; flex-shrink: 0; transition: transform .2s, color .2s; }
+    .row:hover .row-arrow { transform: translateX(4px); color: var(--rose); }
+
+    /* Icon colours */
+    .ic-rose   { color: var(--rose);  background: var(--rose-bg); }
+    .ic-gold   { color: var(--gold);  background: var(--gold-bg); }
+    .ic-green  { color: #25D366;      background: var(--green-bg); }
+    .ic-amber  { color: var(--amber); background: var(--amber-bg); }
+    .ic-shopee { color: var(--shopee);background: var(--shopee-bg); }
+    .ic-teal   { color: var(--teal);  background: var(--teal-bg); }
+    .ic-tiktok {
+      color: #1d1d1d; background: rgba(0,0,0,.06);
+      filter: drop-shadow(1px 0 0 rgba(254,44,85,.5)) drop-shadow(-1px -1px 0 rgba(37,244,238,.5));
+    }
+
+    /* Gold highlight */
+    .card-gold {
+      background: linear-gradient(120deg, rgba(201,146,106,.12), rgba(255,255,255,.82));
+      border-color: var(--gold-border);
+      box-shadow: 0 2px 24px rgba(201,146,106,.1);
+    }
+    .card-gold .row-title { color: var(--gold); }
+    .card-gold .row:hover  { background: rgba(201,146,106,.08); }
+
+    /* Shopee highlight */
+    .card-shopee {
+      background: linear-gradient(120deg, rgba(238,77,45,.08), rgba(255,255,255,.82));
+      border-color: var(--shopee-border);
+      box-shadow: 0 2px 24px rgba(238,77,45,.07);
+    }
+    .card-shopee .row-title { color: var(--shopee); }
+    .card-shopee .row:hover  { background: rgba(238,77,45,.06); }
+
+    /* ══════════════════════════════════
+       WA DROPDOWN
+    ══════════════════════════════════ */
+    .wa-wrap { position: relative; }
+    .wa-btn .chevron { transition: transform .35s ease; }
+    .wa-btn.open .chevron { transform: rotate(90deg); }
+    .wa-btn.open { background: rgba(194,84,122,.05); }
+
+    .wa-sub { overflow: hidden; max-height: 0; transition: max-height .4s ease; }
+    .wa-sub.open { max-height: 300px; }
+    .wa-sub .row {
+      padding: clamp(11px, 2vw, 13px) clamp(14px, 3vw, 18px) clamp(11px, 2vw, 13px) clamp(20px, 4vw, 28px);
+      background: rgba(255,255,255,.5);
+    }
+    .wa-sub .row:hover { background: rgba(194,84,122,.06); }
+
+    .sub-icon {
+      width: 32px; height: 32px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════
+       CHIP GRID
+    ══════════════════════════════════ */
+    .chip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(7px, 2vw, 10px);
+    }
+    .chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: clamp(12px, 2vw, 16px);
+      padding: clamp(14px, 2.5vw, 18px) clamp(8px, 1.5vw, 12px);
+      display: flex; flex-direction: column; align-items: center;
+      gap: clamp(7px, 1.5vw, 10px); text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .chip:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .chip-ico {
+      font-size: clamp(19px, 3vw, 24px);
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .chip-lbl {
+      font-size: clamp(10px, 1.8vw, 12px);
+      color: var(--muted); font-weight: 500; line-height: 1.4;
+    }
+
+    /* ══════════════════════════════════
+       MAP
+    ══════════════════════════════════ */
+    .map-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .map-frame {
+      width: 100%;
+      height: clamp(170px, 30vw, 240px);
+      display: block; border: none;
+    }
+    .map-info {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: clamp(12px, 2.5vw, 16px) clamp(14px, 3vw, 20px);
+      gap: 12px; flex-wrap: wrap;
+    }
+    .map-info h4 {
+      font-size: clamp(12.5px, 2vw, 14px);
+      font-weight: 600; margin-bottom: 3px;
+    }
+    .map-info p  { font-size: clamp(10.5px, 1.8vw, 12px); color: var(--muted); }
+    .map-cta {
+      text-decoration: none; color: var(--rose);
+      background: var(--rose-bg);
+      border: 1px solid var(--rose-border);
+      padding: 8px 18px; border-radius: 50px;
+      font-size: clamp(11px, 1.8vw, 12px); font-weight: 600;
+      white-space: nowrap;
+      transition: background .2s, color .2s, box-shadow .2s;
+      flex-shrink: 0;
+    }
+    .map-cta:hover { background: var(--rose); color: #fff; box-shadow: 0 4px 16px rgba(194,84,122,.3); }
+
+    /* ══════════════════════════════════
+       PETAL DIVIDER
+    ══════════════════════════════════ */
+    .petal-divider {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; margin: 4px 0 20px;
+      font-size: 13px; color: var(--rose-light); letter-spacing: 6px;
+    }
+    .petal-divider::before,
+    .petal-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, var(--rose-border));
+    }
+    .petal-divider::after {
+      background: linear-gradient(to left, transparent, var(--rose-border));
+    }
+
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
+    .footer {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 16px; padding-top: 18px;
+      border-top: 1px solid var(--border);
+      margin-top: 4px;
+    }
+    /* on desktop footer spans both columns */
+    @media (min-width: 900px) {
+      .footer { grid-column: 1 / -1; }
+    }
+
+    .f-socials { display: flex; gap: clamp(4px, 1.5vw, 8px); flex-wrap: wrap; justify-content: center; }
+    .f-social-item {
+      display: flex; flex-direction: column; align-items: center; gap: 5px;
+      text-decoration: none; color: var(--muted);
+      padding: clamp(8px, 1.5vw, 10px) clamp(10px, 2vw, 14px);
+      border-radius: 13px;
+      transition: color .2s, background .2s, transform .2s;
+    }
+    .f-social-item:hover { color: var(--rose); background: var(--rose-bg); transform: translateY(-2px); }
+    .f-social-item i { font-size: clamp(15px, 2.5vw, 17px); }
+    .f-social-label { font-size: clamp(9px, 1.5vw, 9.5px); font-weight: 600; letter-spacing: .5px; text-transform: uppercase; }
+    .f-copy {
+      font-size: clamp(10.5px, 1.8vw, 11.5px); color: var(--soft);
+      text-align: center; line-height: 1.8;
+    }
+    .f-brand {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-weight: 600;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ══════════════════════════════════
+       POPUP
+    ══════════════════════════════════ */
+    .overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(45,24,32,.45); backdrop-filter: blur(10px);
+      display: flex; align-items: flex-end; justify-content: center;
+      padding: 0;
+      opacity: 0; pointer-events: none; transition: opacity .3s;
+    }
+    .overlay.show { opacity: 1; pointer-events: all; }
+
+    .popup {
+      background: #fff8f6;
+      border: 1px solid var(--border);
+      box-shadow: 0 -8px 40px rgba(180,90,120,.18);
+      border-radius: 28px 28px 0 0;
+      padding: clamp(20px, 4vw, 30px) clamp(18px, 4vw, 28px) max(24px, env(safe-area-inset-bottom, 0px));
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      transform: translateY(40px);
+      transition: transform .4s cubic-bezier(.22,1,.36,1);
+      max-height: 92dvh;
+      overflow-y: auto;
+    }
+    /* on desktop: centered modal */
+    @media (min-width: 600px) {
+      .overlay {
+        align-items: center;
+        padding: 20px;
+      }
+      .popup {
+        border-radius: 28px;
+        box-shadow: 0 20px 60px rgba(180,90,120,.2);
+        transform: translateY(24px) scale(.97);
+        max-height: 88dvh;
+      }
+      .overlay.show .popup { transform: translateY(0) scale(1); }
+    }
+    .overlay.show .popup { transform: translateY(0); }
+
+    /* drag handle on mobile */
+    .drag-handle {
+      width: 38px; height: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      margin: 0 auto 18px;
+    }
+    @media (min-width: 600px) { .drag-handle { display: none; } }
+
+    .pop-x {
+      position: absolute; top: 15px; right: 17px;
+      background: var(--rose-bg);
+      color: var(--rose); width: 30px; height: 30px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 12px;
+      transition: background .2s;
+      border: none;
+    }
+    .pop-x:hover { background: var(--rose); color: #fff; }
+
+    .pop-icon {
+      width: 50px; height: 50px; border-radius: 15px;
+      background: linear-gradient(135deg, var(--rose-bg), var(--gold-bg));
+      border: 1px solid var(--rose-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 13px;
+    }
+    .popup h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 4vw, 22px);
+      font-weight: 700; margin-bottom: 5px; color: var(--text);
+    }
+    .popup .pop-sub {
+      font-size: clamp(11.5px, 2vw, 13px);
+      color: var(--muted); line-height: 1.6; margin-bottom: 20px;
+    }
+
+    .type-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 9px; margin-bottom: 16px;
+    }
+    .t-opt {
+      padding: clamp(9px, 2vw, 11px); border-radius: 11px;
+      text-align: center; font-size: clamp(12px, 2.5vw, 13.5px);
+      font-weight: 600; cursor: pointer;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.6); color: var(--muted);
+      transition: all .2s; font-family: 'Jost', sans-serif;
+    }
+    .t-opt:hover { border-color: var(--rose-border); color: var(--rose); }
+    .t-opt.on {
+      background: var(--rose-bg); border-color: var(--rose-border); color: var(--rose);
+      box-shadow: 0 2px 12px rgba(194,84,122,.12);
+    }
+
+    .field { margin-bottom: 12px; }
+    .field label {
+      display: block; font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 7px;
+    }
+    .field input, .field textarea {
+      width: 100%; background: rgba(255,255,255,.75);
+      border: 1px solid var(--border); border-radius: 13px;
+      padding: clamp(10px, 2vw, 13px) clamp(12px, 2.5vw, 15px);
+      color: var(--text); font-size: clamp(13px, 2.5vw, 14.5px);
+      font-family: 'Jost', sans-serif; outline: none; resize: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--soft); }
+    .field input:focus, .field textarea:focus {
+      border-color: var(--rose-border);
+      box-shadow: 0 0 0 3px rgba(194,84,122,.1);
+    }
+    .field textarea { height: clamp(90px, 18vw, 110px); line-height: 1.65; }
+    .char-c { font-size: 10px; color: var(--soft); text-align: right; margin-top: 4px; }
+    .char-c.warn { color: var(--amber); }
+
+    .send-btn {
+      width: 100%; padding: clamp(12px, 2.5vw, 14px);
+      background: linear-gradient(135deg, var(--rose) 0%, #e07898 100%);
+      border: none; border-radius: 14px; color: #fff;
+      font-size: clamp(13.5px, 2.5vw, 15px); font-weight: 700;
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      cursor: pointer; font-family: 'Jost', sans-serif; margin-top: 4px;
+      transition: opacity .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 6px 24px rgba(194,84,122,.3);
+    }
+    .send-btn:hover { opacity: .92; transform: translateY(-1px); box-shadow: 0 10px 32px rgba(194,84,122,.4); }
+    .send-btn:active { transform: scale(.98); }
+
+    .success { display: none; flex-direction: column; align-items: center; text-align: center; padding: 10px 0 6px; }
+    .success.show { display: flex; }
+    .form-body.gone { display: none; }
+    .ok-ring {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose-bg), rgba(201,146,106,.15));
+      border: 1.5px solid var(--rose-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; margin-bottom: 16px;
+      animation: pop .45s cubic-bezier(.22,1,.36,1);
+    }
+    @keyframes pop { from{transform:scale(.3);opacity:0} to{transform:scale(1);opacity:1} }
+    .success h3 { font-family: 'Playfair Display', serif; font-size: clamp(18px, 4vw, 21px); font-weight: 700; margin-bottom: 7px; }
+    .success p  { font-size: clamp(12px, 2vw, 13.5px); color: var(--muted); line-height: 1.65; margin-bottom: 22px; }
+    .cls-btn {
+      padding: 10px 28px; border-radius: 50px;
+      background: var(--rose-bg); border: 1px solid var(--rose-border);
+      color: var(--rose); font-size: 13.5px; font-weight: 600;
+      cursor: pointer; font-family: 'Jost', sans-serif; transition: background .2s;
+    }
+    .cls-btn:hover { background: var(--rose); color: #fff; }
+
+    /* ══════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════ */
+    @keyframes rise { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ══════════════════════════════════
+       SMALL PHONE  (≤ 360px)
+    ══════════════════════════════════ */
+    @media (max-width: 360px) {
+      .logo-pill { padding: 8px 14px; gap: 7px; }
+      .logo-pill img { height: 18px; }
+      .logo-div { display: none; }
+      .logo-div:first-of-type { display: block; } /* keep at least one */
+      .chip-lbl { font-size: 9.5px; }
+    }
+
+    /* ══════════════════════════════════
+       TABLET  (600px – 899px)
+    ══════════════════════════════════ */
+    @media (min-width: 600px) and (max-width: 899px) {
+      :root { --max-w: 600px; }
+      .chip-grid { grid-template-columns: repeat(3, 1fr); }
+      .map-frame { height: 220px; }
+    }
+
+    /* ══════════════════════════════════
+       DESKTOP TWO-COLUMN SPECIFICS
+    ══════════════════════════════════ */
+    @media (min-width: 900px) {
+      /* Elevate sections to fill columns naturally */
+      .section { margin-bottom: 20px; }
+
+      /* Map is taller on desktop */
+      .map-frame { height: 260px; }
+
+      /* Row hover more refined on desktop */
+      .row { transition: background .15s, padding-left .15s; }
+      .row:hover { padding-left: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background layers -->
+<div class="bg-canvas"></div>
+
+<!-- Floating petals -->
+<script>
+(function(){
+  var colors=['rgba(220,140,170,.35)','rgba(230,160,180,.28)','rgba(210,120,155,.22)','rgba(232,196,160,.3)','rgba(240,180,200,.25)'];
+  for(var i=0;i<14;i++){
+    var p=document.createElement('div'); p.className='petal';
+    var s=Math.random()*10+6;
+    p.style.cssText=[
+      'width:'+s+'px','height:'+(s*1.4)+'px',
+      'left:'+(Math.random()*100)+'%',
+      'background:'+colors[Math.floor(Math.random()*colors.length)],
+      'animation-duration:'+(18+Math.random()*24)+'s',
+      'animation-delay:'+(-Math.random()*26)+'s'
+    ].join(';');
+    document.body.appendChild(p);
+  }
+})();
+</script>
+
+<div class="page">
+
+  <!-- ══ HEADER ══ -->
+  <div class="header">
+    <div class="logo-pill">
+      <img src="Beauty Logo 1.png" alt="Beauty"  onerror="this.src='https://placehold.co/88x26/fdf4f0/c2547a?text=Beauty'"/>
+      <div class="logo-div"></div>
+      <img src="ceria.png f.png"   alt="Ceria"   onerror="this.src='https://placehold.co/88x26/fdf4f0/c2547a?text=Ceria'"/>
+      <div class="logo-div"></div>
+      <img src="BEXMart Logo.png"  alt="BEXmart" onerror="this.src='https://placehold.co/88x26/fdf4f0/c9926a?text=BEXmart'"/>
+    </div>
+
+    <div class="eyebrow">Kendari · South Sulawesi</div>
+    <h1>New Year,<br><em>New Glow!</em></h1>
+    <p class="tagline">One stop shopping untuk kecantikan, kesehatan &amp; kebutuhan harian di Kendari.</p>
+
+    <div class="petal-divider">✦ ✦ ✦</div>
+
+    <div class="status-bar" role="status" aria-label="Jam operasional">
+      <div class="s-item">
+        <div class="dot-ring" aria-hidden="true"><b></b></div>
+        <span style="color:var(--text);font-weight:600">Buka Setiap Hari</span>
+      </div>
+      <div class="s-divider" aria-hidden="true"></div>
+      <div class="s-item">
+        <i class="fa-regular fa-clock" style="color:var(--rose);font-size:11.5px" aria-hidden="true"></i>
+        <span>08.00 – 22.00 WITA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ LEFT COLUMN (or full-width on mobile) ══ -->
+  <div class="col-left">
+
+    <!-- TENTANG KAMI -->
+    <div class="section sec-delay-1">
+      <div class="sec-head">
+        <span class="sec-title">Tentang Kami</span>
+        <div class="sec-line" aria-hidden="true"></div>
+      </div>
+      <div class="chip-grid">
+        <div class="chip">
+          <i class="fa-solid fa-gem chip-ico" aria-hidden="true"></i>
+          <div class="chip-lbl">Kosmetik &amp; Skincare</div>
+        </div>
+        <div class="chip">
+          <i class="fa-solid fa-prescription-bottle-medical chip-ico" aria-hidden="true"></i>
+          <div class="chip-lbl">Apotek Lengkap</div>
+        </div>
+        <div class="chip">
+          <i class="fa-solid fa-basket-shopping chip-ico" aria-hidden="true"></i>
+          <div class="chip-lbl">Supermarket Harian</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BELANJA ONLINE -->
+    <div class="section sec-delay-2">
+      <div class="sec-head">
+        <span class="sec-title">Belanja Online</span>
+        <div class="sec-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="card card-gold" style="margin-bottom:11px;">
+        <a href="https://beautykendari.id" target="_blank" rel="noopener noreferrer" class="row">
+          <div class="row-icon ic-gold" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+          <div class="row-body">
+            <div class="row-title">Website Official Store</div>
+            <div class="row-desc">beautykendari.id · Koleksi Terlengkap</div>
+          </div>
+          <i class="fa-solid fa-arrow-right row-arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="card card-shopee">
+        <a href="http://s.shopee.co.id/1BBEutSID6" target="_blank" rel="noopener noreferrer" class="row">
+          <div class="row-icon ic-shopee" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="22" height="22" fill="none" aria-hidden="true">
+              <rect x="4" y="18" width="40" height="26" rx="5" fill="#ee4d2d"/>
+              <path d="M16 18c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#fff" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+              <circle cx="18" cy="30" r="2.2" fill="#fff"/>
+              <circle cx="30" cy="30" r="2.2" fill="#fff"/>
+              <path d="M18 36c1.5 2 10.5 2 12 0" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="row-body">
+            <div class="row-title">Shopee Official Store</div>
+            <div class="row-desc">Gratis Ongkir &amp; Banyak Promo Menarik</div>
+          </div>
+          <i class="fa-solid fa-arrow-right row-arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- HUBUNGI KAMI -->
+    <div class="section sec-delay-3">
+      <div class="sec-head">
+        <span class="sec-title">Hubungi Kami</span>
+        <div class="sec-line" aria-hidden="true"></div>
+      </div>
+      <div class="card">
+        <div class="wa-wrap" id="waWrap">
+          <button class="row wa-btn" id="waBtn"
+                  onclick="toggleWa()"
+                  aria-expanded="false"
+                  aria-controls="waSub">
+            <div class="row-icon ic-green" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="row-body" style="text-align:left">
+              <div class="row-title">WhatsApp</div>
+              <div class="row-desc">Chat, Konsultasi &amp; Delivery Order</div>
+            </div>
+            <i class="fa-solid fa-chevron-right row-arrow chevron" aria-hidden="true"></i>
+          </button>
+          <div class="wa-sub" id="waSub" role="region" aria-label="Opsi WhatsApp">
+            <a href="https://wa.me/6285126438727" target="_blank" rel="noopener noreferrer" class="row">
+              <div class="sub-icon ic-green" aria-hidden="true"><i class="fa-brands fa-whatsapp" style="font-size:13px"></i></div>
+              <div class="row-body">
+                <div class="row-title" style="font-size:13px">Mulai Chat</div>
+                <div class="row-desc">Konsultasi Produk, Resep &amp; Pesan Antar</div>
+              </div>
+              <i class="fa-solid fa-arrow-right row-arrow" style="font-size:10px" aria-hidden="true"></i>
+            </a>
+            <button class="row" onclick="openPopup()" style="text-align:left">
+              <div class="sub-icon ic-rose" aria-hidden="true"><i class="fa-solid fa-star-half-stroke" style="font-size:13px"></i></div>
+              <div class="row-body">
+                <div class="row-title" style="font-size:13px">Kritik &amp; Saran</div>
+                <div class="row-desc">Bantu kami jadi lebih baik</div>
+              </div>
+              <i class="fa-solid fa-arrow-right row-arrow" style="font-size:10px" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /col-left -->
+
+  <!-- ══ RIGHT COLUMN (or continues below on mobile) ══ -->
+  <div class="col-right">
+
+    <!-- IKUTI KAMI -->
+    <div class="section sec-delay-4">
+      <div class="sec-head">
+        <span class="sec-title">Ikuti Kami</span>
+        <div class="sec-line" aria-hidden="true"></div>
+      </div>
+      <div class="card">
+        <a href="https://www.instagram.com/beauty_kendari/" target="_blank" rel="noopener noreferrer" class="row">
+          <div class="row-icon ic-rose" aria-hidden="true"><i class="fa-brands fa-instagram"></i></div>
+          <div class="row-body">
+            <div class="row-title">Instagram</div>
+            <div class="row-desc">Update Stok Terbaru &amp; Review Produk</div>
+          </div>
+          <i class="fa-solid fa-arrow-right row-arrow" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.tiktok.com/@beauty.kendari" target="_blank" rel="noopener noreferrer" class="row">
+          <div class="row-icon ic-tiktok" aria-hidden="true"><i class="fa-brands fa-tiktok"></i></div>
+          <div class="row-body">
+            <div class="row-title">TikTok</div>
+            <div class="row-desc">Racun Skincare &amp; Konten Seru</div>
+          </div>
+          <i class="fa-solid fa-arrow-right row-arrow" aria-hidden="true"></i>
+        </a>
+        <a href="https://bit.ly/beautykendariWA" target="_blank" rel="noopener noreferrer" class="row">
+          <div class="row-icon ic-gold" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></div>
+          <div class="row-body">
+            <div class="row-title">WhatsApp Channel</div>
+            <div class="row-desc">Info Promo &amp; Stok Terbaru Lebih Awal</div>
+          </div>
+          <i class="fa-solid fa-arrow-right row-arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- LOKASI -->
+    <div class="section sec-delay-5">
+      <div class="sec-head">
+        <span class="sec-title">Lokasi Kami</span>
+        <div class="sec-line" aria-hidden="true"></div>
+      </div>
+      <div class="map-card">
+        <iframe class="map-frame"
+          title="Peta Lokasi Beauty & BEXmart Kendari"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1NAvXEBN0ELLjiEbAoX8sD0zLWYva7GE&hl=id&ll=-4.497214576627072%2C122.21728927087588&z=11"
+          allowfullscreen loading="lazy"></iframe>
+        <div class="map-info">
+          <div>
+            <h4>Temukan Cabang Terdekat</h4>
+            <p>Beauty &amp; BEXmart · Kota Kendari</p>
+          </div>
+          <a href="https://www.google.com/maps/d/viewer?mid=1NAvXEBN0ELLjiEbAoX8sD0zLWYva7GE"
+             target="_blank" rel="noopener noreferrer" class="map-cta">
+            <i class="fa-solid fa-location-dot" style="margin-right:5px" aria-hidden="true"></i>Buka Peta
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /col-right -->
+
+  <!-- ══ FOOTER (spans both cols on desktop) ══ -->
+  <footer class="footer">
+    <div class="f-socials" role="list" aria-label="Sosial media kami">
+      <a href="https://www.tiktok.com/@beauty.kendari" target="_blank" rel="noopener noreferrer"
+         class="f-social-item" role="listitem" aria-label="TikTok Beauty Kendari">
+        <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+        <span class="f-social-label">TikTok</span>
+      </a>
+      <a href="https://www.instagram.com/beauty_kendari/" target="_blank" rel="noopener noreferrer"
+         class="f-social-item" role="listitem" aria-label="Instagram Beauty Kendari">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        <span class="f-social-label">Instagram</span>
+      </a>
+      <a href="https://wa.me/6285126438727" target="_blank" rel="noopener noreferrer"
+         class="f-social-item" role="listitem" aria-label="WhatsApp Beauty Kendari">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <span class="f-social-label">WhatsApp</span>
+      </a>
+      <a href="https://beautykendari.id" target="_blank" rel="noopener noreferrer"
+         class="f-social-item" role="listitem" aria-label="Website Beauty Kendari">
+        <i class="fa-solid fa-globe" aria-hidden="true"></i>
+        <span class="f-social-label">Website</span>
+      </a>
+    </div>
+    <div class="f-copy">
+      © 2026 <span class="f-brand">Beauty &amp; BEXmart</span> Kendari<br>All Rights Reserved.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+
+
+<!-- ══ POPUP KRITIK & SARAN ══ -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true"
+     aria-labelledby="popupTitle" onclick="bgClick(event)">
+  <div class="popup">
+    <div class="drag-handle" aria-hidden="true"></div>
+
+    <button class="pop-x" onclick="closePopup()" aria-label="Tutup popup">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+
+    <div class="form-body" id="formBody">
+      <div class="pop-icon" aria-hidden="true">⭐</div>
+      <h2 id="popupTitle">Kritik &amp; Saran</h2>
+      <p class="pop-sub">Pendapat kamu sangat berarti untuk kemajuan kami. Sampaikan dengan jujur!</p>
+
+      <div class="type-grid" role="group" aria-label="Jenis pesan">
+        <button class="t-opt on" id="tKritik" onclick="setType('kritik')" aria-pressed="true">👎 Kritik</button>
+        <button class="t-opt"   id="tSaran"   onclick="setType('saran')"  aria-pressed="false">💡 Saran</button>
+      </div>
+
+      <div class="field">
+        <label for="fNama">Nama (opsional)</label>
+        <input type="text" id="fNama" placeholder="Nama kamu…" maxlength="50" autocomplete="name"/>
+      </div>
+      <div class="field">
+        <label for="fPesan">Pesan <span id="typeLabel">Kritik</span></label>
+        <textarea id="fPesan" placeholder="Apa yang perlu kami perbaiki?" maxlength="500" oninput="countChar()" aria-describedby="charC"></textarea>
+        <div class="char-c" id="charC" aria-live="polite">0 / 500</div>
+      </div>
+
+      <button class="send-btn" onclick="sendMsg()">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Kirim via WhatsApp
+      </button>
+    </div>
+
+    <div class="success" id="successView" aria-live="assertive">
+      <div class="ok-ring" aria-hidden="true">✅</div>
+      <h3>Terima Kasih!</h3>
+      <p>Kamu akan diarahkan ke WhatsApp.<br>Masukan kamu sangat berarti bagi kami 💖</p>
+      <button class="cls-btn" onclick="closePopup()">Tutup</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  /* ── WA toggle ── */
+  function toggleWa(){
+    const btn=document.getElementById('waBtn'), sub=document.getElementById('waSub');
+    const isOpen=btn.classList.contains('open');
+    btn.classList.toggle('open'); sub.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  }
+  document.addEventListener('click', e => {
+    const wrap=document.getElementById('waWrap');
+    if(wrap && !wrap.contains(e.target)){
+      document.getElementById('waBtn').classList.remove('open');
+      document.getElementById('waSub').classList.remove('open');
+      document.getElementById('waBtn').setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* ── Popup ── */
+  let selType='kritik';
+
+  function openPopup(){
+    document.getElementById('waBtn').classList.remove('open');
+    document.getElementById('waSub').classList.remove('open');
+    document.getElementById('waBtn').setAttribute('aria-expanded','false');
+    document.getElementById('fNama').value='';
+    document.getElementById('fPesan').value='';
+    document.getElementById('charC').textContent='0 / 500';
+    document.getElementById('charC').classList.remove('warn');
+    setType('kritik');
+    document.getElementById('formBody').classList.remove('gone');
+    document.getElementById('successView').classList.remove('show');
+    document.getElementById('overlay').classList.add('show');
+    document.body.style.overflow='hidden';
+    setTimeout(()=>document.getElementById('popupTitle').focus(), 50);
+  }
+
+  function closePopup(){
+    document.getElementById('overlay').classList.remove('show');
+    document.body.style.overflow='';
+  }
+
+  function bgClick(e){
+    if(e.target===document.getElementById('overlay')) closePopup();
+  }
+
+  document.addEventListener('keydown', e => {
+    if(e.key==='Escape' && document.getElementById('overlay').classList.contains('show')) closePopup();
+  });
+
+  function setType(t){
+    selType=t;
+    const k=document.getElementById('tKritik'), s=document.getElementById('tSaran');
+    k.classList.toggle('on', t==='kritik'); s.classList.toggle('on', t==='saran');
+    k.setAttribute('aria-pressed', String(t==='kritik'));
+    s.setAttribute('aria-pressed', String(t==='saran'));
+    document.getElementById('typeLabel').textContent = t==='kritik'?'Kritik':'Saran';
+    document.getElementById('fPesan').placeholder = t==='kritik'
+      ?'Apa yang perlu kami perbaiki?'
+      :'Apa ide atau masukan kamu untuk kami?';
+  }
+
+  function countChar(){
+    const n=document.getElementById('fPesan').value.length;
+    const el=document.getElementById('charC');
+    el.textContent=n+' / 500'; el.classList.toggle('warn', n>400);
+  }
+
+  function sendMsg(){
+    const nama  = document.getElementById('fNama').value.trim();
+    const pesan = document.getElementById('fPesan').value.trim();
+    if(!pesan){
+      const ta=document.getElementById('fPesan');
+      ta.style.borderColor='rgba(194,84,122,.6)'; ta.focus();
+      setTimeout(()=>ta.style.borderColor='', 2000); return;
+    }
+    const label = selType==='kritik'?'👎 Kritik':'💡 Saran';
+    const namaPart = nama ? 'Nama: '+nama+'\n' : '';
+    const msg = 'Halo Beauty Kendari!\n\n*['+label+']*\n'+namaPart+'\n'+pesan+'\n\n_Dikirim via beautykendari.id_';
+    document.getElementById('formBody').classList.add('gone');
+    document.getElementById('successView').classList.add('show');
+    setTimeout(()=>window.open('https://wa.me/6285126438727?text='+encodeURIComponent(msg),'_blank'), 800);
+  }
+</script>
+</body>
+</html>
