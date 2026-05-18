@@ -1,4 +1,4 @@
-t<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <!-- Google Analytics -->
@@ -68,7 +68,6 @@ t<!DOCTYPE html>
 
       --r: 20px;
 
-      /* Fluid sizing */
       --fs-h1:     clamp(28px, 6vw, 48px);
       --fs-tag:    clamp(12px, 2vw, 14px);
       --page-pad:  clamp(14px, 4vw, 28px);
@@ -94,9 +93,6 @@ t<!DOCTYPE html>
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ══════════════════════════════════
-       BACKGROUND
-    ══════════════════════════════════ */
     .bg-canvas {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background:
@@ -118,9 +114,6 @@ t<!DOCTYPE html>
       100% { transform: translateY(-12vh)  rotate(340deg) scale(.7); opacity: 0; }
     }
 
-    /* ══════════════════════════════════
-       LAYOUT — MOBILE FIRST
-    ══════════════════════════════════ */
     .page {
       width: 100%;
       max-width: var(--max-w);
@@ -129,10 +122,8 @@ t<!DOCTYPE html>
       display: flex; flex-direction: column;
     }
 
-    /* ── DESKTOP WIDE: two-column shell ── */
     @media (min-width: 900px) {
       :root { --max-w: 960px; }
-
       .page {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -140,18 +131,12 @@ t<!DOCTYPE html>
         column-gap: 36px;
         align-items: start;
       }
-
-      /* header spans full width */
       .header         { grid-column: 1 / -1; }
-      /* left col */
       .col-left        { grid-column: 1; display: flex; flex-direction: column; }
-      /* right col */
       .col-right       { grid-column: 2; display: flex; flex-direction: column; }
     }
 
-    /* ══════════════════════════════════
-       HEADER
-    ══════════════════════════════════ */
+    /* ══ HEADER ══ */
     .header {
       display: flex; flex-direction: column; align-items: center;
       text-align: center;
@@ -174,11 +159,7 @@ t<!DOCTYPE html>
       height: clamp(20px, 3.5vw, 26px);
       width: auto; object-fit: contain; flex-shrink: 0;
     }
-    .logo-div {
-      width: 1px; height: 18px;
-      background: var(--rose-border);
-      flex-shrink: 0;
-    }
+    .logo-div { width: 1px; height: 18px; background: var(--rose-border); flex-shrink: 0; }
 
     .eyebrow {
       font-size: clamp(9px, 1.5vw, 10px);
@@ -206,7 +187,6 @@ t<!DOCTYPE html>
       max-width: 340px; margin: 0 auto 24px; font-weight: 400;
     }
 
-    /* Status bar */
     .status-bar {
       display: inline-flex; align-items: center;
       gap: clamp(10px, 2.5vw, 20px);
@@ -216,16 +196,14 @@ t<!DOCTYPE html>
       border-radius: 50px;
       padding: 10px clamp(16px, 3vw, 24px);
       backdrop-filter: blur(10px);
-      flex-wrap: nowrap;        /* keep on one line on most screens */
+      flex-wrap: nowrap;
     }
     .s-item {
       display: flex; align-items: center;
       gap: 7px; font-size: clamp(11px, 2vw, 12.5px);
-      color: var(--muted); font-weight: 500;
-      white-space: nowrap;
+      color: var(--muted); font-weight: 500; white-space: nowrap;
     }
     .s-divider { width: 1px; height: 14px; background: var(--border); flex-shrink: 0; }
-
     .dot-ring { position: relative; width: 9px; height: 9px; flex-shrink: 0; }
     .dot-ring b { display: block; width: 9px; height: 9px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 8px #4ade80; }
     .dot-ring::after {
@@ -235,9 +213,7 @@ t<!DOCTYPE html>
     }
     @keyframes sonar { 0%{opacity:.6;transform:scale(.4)} 100%{opacity:0;transform:scale(2)} }
 
-    /* ══════════════════════════════════
-       SECTION WRAPPER
-    ══════════════════════════════════ */
+    /* ══ SECTIONS ══ */
     .section { margin-bottom: clamp(16px, 3vw, 22px); animation: rise .7s cubic-bezier(.22,1,.36,1) both; }
     .sec-delay-1{animation-delay:.08s}
     .sec-delay-2{animation-delay:.15s}
@@ -252,14 +228,9 @@ t<!DOCTYPE html>
       font-weight: 700; letter-spacing: 3px;
       text-transform: uppercase; color: var(--rose); white-space: nowrap;
     }
-    .sec-line {
-      flex: 1; height: 1px;
-      background: linear-gradient(to right, var(--rose-border), transparent);
-    }
+    .sec-line { flex: 1; height: 1px; background: linear-gradient(to right, var(--rose-border), transparent); }
 
-    /* ══════════════════════════════════
-       CARD
-    ══════════════════════════════════ */
+    /* ══ CARD ══ */
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -269,9 +240,7 @@ t<!DOCTYPE html>
       backdrop-filter: blur(10px);
     }
 
-    /* ══════════════════════════════════
-       ROW BUTTON
-    ══════════════════════════════════ */
+    /* ══ ROW ══ */
     .row {
       display: flex; align-items: center; gap: 14px;
       padding: clamp(13px, 2.5vw, 16px) clamp(14px, 3vw, 20px);
@@ -285,12 +254,10 @@ t<!DOCTYPE html>
     .row:active { background: rgba(194,84,122,.10); }
 
     .row-icon {
-      width: clamp(36px, 5vw, 42px);
-      height: clamp(36px, 5vw, 42px);
+      width: clamp(36px, 5vw, 42px); height: clamp(36px, 5vw, 42px);
       border-radius: 13px;
       display: flex; align-items: center; justify-content: center;
-      font-size: clamp(16px, 2.5vw, 19px);
-      flex-shrink: 0;
+      font-size: clamp(16px, 2.5vw, 19px); flex-shrink: 0;
     }
     .row-body    { flex: 1; text-align: left; min-width: 0; }
     .row-title   { font-size: clamp(13px, 2.2vw, 14.5px); font-weight: 600; color: var(--text); line-height: 1.25; }
@@ -298,7 +265,6 @@ t<!DOCTYPE html>
     .row-arrow   { color: var(--soft); font-size: 11px; flex-shrink: 0; transition: transform .2s, color .2s; }
     .row:hover .row-arrow { transform: translateX(4px); color: var(--rose); }
 
-    /* Icon colours */
     .ic-rose   { color: var(--rose);  background: var(--rose-bg); }
     .ic-gold   { color: var(--gold);  background: var(--gold-bg); }
     .ic-green  { color: #25D366;      background: var(--green-bg); }
@@ -310,7 +276,6 @@ t<!DOCTYPE html>
       filter: drop-shadow(1px 0 0 rgba(254,44,85,.5)) drop-shadow(-1px -1px 0 rgba(37,244,238,.5));
     }
 
-    /* Gold highlight */
     .card-gold {
       background: linear-gradient(120deg, rgba(201,146,106,.12), rgba(255,255,255,.82));
       border-color: var(--gold-border);
@@ -319,7 +284,6 @@ t<!DOCTYPE html>
     .card-gold .row-title { color: var(--gold); }
     .card-gold .row:hover  { background: rgba(201,146,106,.08); }
 
-    /* Shopee highlight */
     .card-shopee {
       background: linear-gradient(120deg, rgba(238,77,45,.08), rgba(255,255,255,.82));
       border-color: var(--shopee-border);
@@ -328,16 +292,14 @@ t<!DOCTYPE html>
     .card-shopee .row-title { color: var(--shopee); }
     .card-shopee .row:hover  { background: rgba(238,77,45,.06); }
 
-    /* ══════════════════════════════════
-       WA DROPDOWN
-    ══════════════════════════════════ */
+    /* ══ WA DROPDOWN ══ */
     .wa-wrap { position: relative; }
     .wa-btn .chevron { transition: transform .35s ease; }
     .wa-btn.open .chevron { transform: rotate(90deg); }
     .wa-btn.open { background: rgba(194,84,122,.05); }
 
     .wa-sub { overflow: hidden; max-height: 0; transition: max-height .4s ease; }
-    .wa-sub.open { max-height: 300px; }
+    .wa-sub.open { max-height: 400px; }
     .wa-sub .row {
       padding: clamp(11px, 2vw, 13px) clamp(14px, 3vw, 18px) clamp(11px, 2vw, 13px) clamp(20px, 4vw, 28px);
       background: rgba(255,255,255,.5);
@@ -350,14 +312,8 @@ t<!DOCTYPE html>
       font-size: 14px; flex-shrink: 0;
     }
 
-    /* ══════════════════════════════════
-       CHIP GRID
-    ══════════════════════════════════ */
-    .chip-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(7px, 2vw, 10px);
-    }
+    /* ══ CHIP GRID ══ */
+    .chip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(7px, 2vw, 10px); }
     .chip {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -375,14 +331,9 @@ t<!DOCTYPE html>
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .chip-lbl {
-      font-size: clamp(10px, 1.8vw, 12px);
-      color: var(--muted); font-weight: 500; line-height: 1.4;
-    }
+    .chip-lbl { font-size: clamp(10px, 1.8vw, 12px); color: var(--muted); font-weight: 500; line-height: 1.4; }
 
-    /* ══════════════════════════════════
-       MAP
-    ══════════════════════════════════ */
+    /* ══ MAP ══ */
     .map-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -390,64 +341,43 @@ t<!DOCTYPE html>
       box-shadow: var(--shadow);
       overflow: hidden;
     }
-    .map-frame {
-      width: 100%;
-      height: clamp(170px, 30vw, 240px);
-      display: block; border: none;
-    }
+    .map-frame { width: 100%; height: clamp(170px, 30vw, 240px); display: block; border: none; }
     .map-info {
       display: flex; align-items: center;
       justify-content: space-between;
       padding: clamp(12px, 2.5vw, 16px) clamp(14px, 3vw, 20px);
       gap: 12px; flex-wrap: wrap;
     }
-    .map-info h4 {
-      font-size: clamp(12.5px, 2vw, 14px);
-      font-weight: 600; margin-bottom: 3px;
-    }
+    .map-info h4 { font-size: clamp(12.5px, 2vw, 14px); font-weight: 600; margin-bottom: 3px; }
     .map-info p  { font-size: clamp(10.5px, 1.8vw, 12px); color: var(--muted); }
     .map-cta {
       text-decoration: none; color: var(--rose);
-      background: var(--rose-bg);
-      border: 1px solid var(--rose-border);
+      background: var(--rose-bg); border: 1px solid var(--rose-border);
       padding: 8px 18px; border-radius: 50px;
-      font-size: clamp(11px, 1.8vw, 12px); font-weight: 600;
-      white-space: nowrap;
-      transition: background .2s, color .2s, box-shadow .2s;
-      flex-shrink: 0;
+      font-size: clamp(11px, 1.8vw, 12px); font-weight: 600; white-space: nowrap;
+      transition: background .2s, color .2s, box-shadow .2s; flex-shrink: 0;
     }
     .map-cta:hover { background: var(--rose); color: #fff; box-shadow: 0 4px 16px rgba(194,84,122,.3); }
 
-    /* ══════════════════════════════════
-       PETAL DIVIDER
-    ══════════════════════════════════ */
+    /* ══ PETAL DIVIDER ══ */
     .petal-divider {
       display: flex; align-items: center; justify-content: center;
       gap: 10px; margin: 4px 0 20px;
       font-size: 13px; color: var(--rose-light); letter-spacing: 6px;
     }
-    .petal-divider::before,
-    .petal-divider::after {
+    .petal-divider::before, .petal-divider::after {
       content: ''; flex: 1; height: 1px;
       background: linear-gradient(to right, transparent, var(--rose-border));
     }
-    .petal-divider::after {
-      background: linear-gradient(to left, transparent, var(--rose-border));
-    }
+    .petal-divider::after { background: linear-gradient(to left, transparent, var(--rose-border)); }
 
-    /* ══════════════════════════════════
-       FOOTER
-    ══════════════════════════════════ */
+    /* ══ FOOTER ══ */
     .footer {
       display: flex; flex-direction: column; align-items: center;
       gap: 16px; padding-top: 18px;
-      border-top: 1px solid var(--border);
-      margin-top: 4px;
+      border-top: 1px solid var(--border); margin-top: 4px;
     }
-    /* on desktop footer spans both columns */
-    @media (min-width: 900px) {
-      .footer { grid-column: 1 / -1; }
-    }
+    @media (min-width: 900px) { .footer { grid-column: 1 / -1; } }
 
     .f-socials { display: flex; gap: clamp(4px, 1.5vw, 8px); flex-wrap: wrap; justify-content: center; }
     .f-social-item {
@@ -460,77 +390,48 @@ t<!DOCTYPE html>
     .f-social-item:hover { color: var(--rose); background: var(--rose-bg); transform: translateY(-2px); }
     .f-social-item i { font-size: clamp(15px, 2.5vw, 17px); }
     .f-social-label { font-size: clamp(9px, 1.5vw, 9.5px); font-weight: 600; letter-spacing: .5px; text-transform: uppercase; }
-    .f-copy {
-      font-size: clamp(10.5px, 1.8vw, 11.5px); color: var(--soft);
-      text-align: center; line-height: 1.8;
-    }
+    .f-copy { font-size: clamp(10.5px, 1.8vw, 11.5px); color: var(--soft); text-align: center; line-height: 1.8; }
     .f-brand {
-      font-family: 'Playfair Display', serif;
-      font-style: italic; font-weight: 600;
+      font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600;
       background: linear-gradient(135deg, var(--rose), var(--gold));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    /* ══════════════════════════════════
-       POPUP
-    ══════════════════════════════════ */
+    /* ══ POPUP BASE ══ */
     .overlay {
       position: fixed; inset: 0; z-index: 1000;
       background: rgba(45,24,32,.45); backdrop-filter: blur(10px);
       display: flex; align-items: flex-end; justify-content: center;
-      padding: 0;
-      opacity: 0; pointer-events: none; transition: opacity .3s;
+      padding: 0; opacity: 0; pointer-events: none; transition: opacity .3s;
     }
     .overlay.show { opacity: 1; pointer-events: all; }
-
     .popup {
-      background: #fff8f6;
-      border: 1px solid var(--border);
+      background: #fff8f6; border: 1px solid var(--border);
       box-shadow: 0 -8px 40px rgba(180,90,120,.18);
       border-radius: 28px 28px 0 0;
       padding: clamp(20px, 4vw, 30px) clamp(18px, 4vw, 28px) max(24px, env(safe-area-inset-bottom, 0px));
-      width: 100%;
-      max-width: 480px;
-      position: relative;
+      width: 100%; max-width: 480px; position: relative;
       transform: translateY(40px);
       transition: transform .4s cubic-bezier(.22,1,.36,1);
-      max-height: 92dvh;
-      overflow-y: auto;
+      max-height: 92dvh; overflow-y: auto;
     }
-    /* on desktop: centered modal */
     @media (min-width: 600px) {
-      .overlay {
-        align-items: center;
-        padding: 20px;
-      }
-      .popup {
-        border-radius: 28px;
-        box-shadow: 0 20px 60px rgba(180,90,120,.2);
-        transform: translateY(24px) scale(.97);
-        max-height: 88dvh;
-      }
+      .overlay { align-items: center; padding: 20px; }
+      .popup { border-radius: 28px; box-shadow: 0 20px 60px rgba(180,90,120,.2); transform: translateY(24px) scale(.97); max-height: 88dvh; }
       .overlay.show .popup { transform: translateY(0) scale(1); }
     }
     .overlay.show .popup { transform: translateY(0); }
 
-    /* drag handle on mobile */
-    .drag-handle {
-      width: 38px; height: 4px;
-      background: var(--border);
-      border-radius: 4px;
-      margin: 0 auto 18px;
-    }
+    .drag-handle { width: 38px; height: 4px; background: var(--border); border-radius: 4px; margin: 0 auto 18px; }
     @media (min-width: 600px) { .drag-handle { display: none; } }
 
     .pop-x {
       position: absolute; top: 15px; right: 17px;
-      background: var(--rose-bg);
-      color: var(--rose); width: 30px; height: 30px; border-radius: 50%;
+      background: var(--rose-bg); color: var(--rose);
+      width: 30px; height: 30px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       cursor: pointer; font-size: 12px;
-      transition: background .2s;
-      border: none;
+      transition: background .2s; border: none;
     }
     .pop-x:hover { background: var(--rose); color: #fff; }
 
@@ -541,20 +442,11 @@ t<!DOCTYPE html>
       display: flex; align-items: center; justify-content: center;
       font-size: 24px; margin-bottom: 13px;
     }
-    .popup h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(18px, 4vw, 22px);
-      font-weight: 700; margin-bottom: 5px; color: var(--text);
-    }
-    .popup .pop-sub {
-      font-size: clamp(11.5px, 2vw, 13px);
-      color: var(--muted); line-height: 1.6; margin-bottom: 20px;
-    }
+    .popup h2 { font-family: 'Playfair Display', serif; font-size: clamp(18px, 4vw, 22px); font-weight: 700; margin-bottom: 5px; color: var(--text); }
+    .popup .pop-sub { font-size: clamp(11.5px, 2vw, 13px); color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
 
-    .type-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 9px; margin-bottom: 16px;
-    }
+    /* ── KRITIK & SARAN POPUP ── */
+    .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 16px; }
     .t-opt {
       padding: clamp(9px, 2vw, 11px); border-radius: 11px;
       text-align: center; font-size: clamp(12px, 2.5vw, 13.5px);
@@ -564,17 +456,10 @@ t<!DOCTYPE html>
       transition: all .2s; font-family: 'Jost', sans-serif;
     }
     .t-opt:hover { border-color: var(--rose-border); color: var(--rose); }
-    .t-opt.on {
-      background: var(--rose-bg); border-color: var(--rose-border); color: var(--rose);
-      box-shadow: 0 2px 12px rgba(194,84,122,.12);
-    }
+    .t-opt.on { background: var(--rose-bg); border-color: var(--rose-border); color: var(--rose); box-shadow: 0 2px 12px rgba(194,84,122,.12); }
 
     .field { margin-bottom: 12px; }
-    .field label {
-      display: block; font-size: 10px; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 7px;
-    }
+    .field label { display: block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
     .field input, .field textarea {
       width: 100%; background: rgba(255,255,255,.75);
       border: 1px solid var(--border); border-radius: 13px;
@@ -584,10 +469,7 @@ t<!DOCTYPE html>
       transition: border-color .2s, box-shadow .2s;
     }
     .field input::placeholder, .field textarea::placeholder { color: var(--soft); }
-    .field input:focus, .field textarea:focus {
-      border-color: var(--rose-border);
-      box-shadow: 0 0 0 3px rgba(194,84,122,.1);
-    }
+    .field input:focus, .field textarea:focus { border-color: var(--rose-border); box-shadow: 0 0 0 3px rgba(194,84,122,.1); }
     .field textarea { height: clamp(90px, 18vw, 110px); line-height: 1.65; }
     .char-c { font-size: 10px; color: var(--soft); text-align: right; margin-top: 4px; }
     .char-c.warn { color: var(--amber); }
@@ -627,42 +509,128 @@ t<!DOCTYPE html>
     }
     .cls-btn:hover { background: var(--rose); color: #fff; }
 
-    /* ══════════════════════════════════
-       ANIMATIONS
-    ══════════════════════════════════ */
+    /* ══ OUTLET POPUP ══ */
+    #outletOverlay .popup {
+      max-height: 90dvh;
+      display: flex; flex-direction: column;
+      padding-bottom: max(20px, env(safe-area-inset-bottom, 0px));
+    }
+
+    .outlet-header { flex-shrink: 0; }
+    .outlet-header .pop-icon { background: linear-gradient(135deg, var(--green-bg), rgba(109,184,176,.15)); border-color: rgba(37,211,102,.25); }
+
+    /* Search input */
+    .outlet-search-wrap {
+      position: relative; flex-shrink: 0;
+      margin-bottom: 14px;
+    }
+    .outlet-search {
+      width: 100%;
+      background: rgba(255,255,255,.8);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 11px 14px 11px 40px;
+      color: var(--text);
+      font-size: 14px;
+      font-family: 'Jost', sans-serif;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .outlet-search:focus { border-color: rgba(37,211,102,.4); box-shadow: 0 0 0 3px rgba(37,211,102,.1); }
+    .outlet-search::placeholder { color: var(--soft); }
+    .outlet-search-icon {
+      position: absolute; left: 13px; top: 50%; transform: translateY(-50%);
+      color: var(--muted); font-size: 14px; pointer-events: none;
+    }
+    .outlet-count {
+      font-size: 11px; color: var(--muted); font-weight: 500;
+      text-align: right; margin-top: -10px; margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+
+    /* Outlet list */
+    .outlet-list {
+      flex: 1;
+      overflow-y: auto;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.6);
+      -webkit-overflow-scrolling: touch;
+    }
+    .outlet-list::-webkit-scrollbar { width: 4px; }
+    .outlet-list::-webkit-scrollbar-track { background: transparent; }
+    .outlet-list::-webkit-scrollbar-thumb { background: var(--rose-border); border-radius: 4px; }
+
+    .outlet-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      transition: background .18s;
+    }
+    .outlet-item:last-child { border-bottom: none; }
+    .outlet-item:hover { background: rgba(37,211,102,.04); }
+
+    .outlet-num {
+      width: 28px; height: 28px; border-radius: 9px;
+      background: var(--rose-bg); color: var(--rose);
+      font-size: 10px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .outlet-info { flex: 1; min-width: 0; }
+    .outlet-name {
+      font-size: 13.5px; font-weight: 600; color: var(--text);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .outlet-name-pending { color: var(--soft); font-style: italic; }
+    .outlet-num-label { font-size: 10.5px; color: var(--muted); margin-top: 1px; font-weight: 400; }
+
+    .wa-outlet-btn {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      background: var(--green-bg);
+      border: 1px solid rgba(37,211,102,.25);
+      color: #1a9e4d;
+      padding: 7px 13px; border-radius: 10px;
+      font-size: 12.5px; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      transition: background .18s, transform .15s, box-shadow .18s;
+      white-space: nowrap; flex-shrink: 0;
+      font-family: 'Jost', sans-serif;
+    }
+    .wa-outlet-btn:hover {
+      background: rgba(37,211,102,.2);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(37,211,102,.2);
+    }
+    .wa-outlet-btn:active { transform: scale(.97); }
+    .wa-outlet-btn i { font-size: 14px; color: #25D366; }
+
+    /* empty state */
+    .outlet-empty {
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      padding: 36px 20px; gap: 10px;
+      color: var(--muted); font-size: 13px; text-align: center;
+    }
+    .outlet-empty i { font-size: 28px; color: var(--rose-light); }
+    .outlet-empty.show { display: flex; }
+
+    /* ══ ANIMATIONS ══ */
     @keyframes rise { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
-    /* ══════════════════════════════════
-       SMALL PHONE  (≤ 360px)
-    ══════════════════════════════════ */
     @media (max-width: 360px) {
       .logo-pill { padding: 8px 14px; gap: 7px; }
       .logo-pill img { height: 18px; }
       .logo-div { display: none; }
-      .logo-div:first-of-type { display: block; } /* keep at least one */
+      .logo-div:first-of-type { display: block; }
       .chip-lbl { font-size: 9.5px; }
     }
-
-    /* ══════════════════════════════════
-       TABLET  (600px – 899px)
-    ══════════════════════════════════ */
     @media (min-width: 600px) and (max-width: 899px) {
       :root { --max-w: 600px; }
-      .chip-grid { grid-template-columns: repeat(3, 1fr); }
       .map-frame { height: 220px; }
     }
-
-    /* ══════════════════════════════════
-       DESKTOP TWO-COLUMN SPECIFICS
-    ══════════════════════════════════ */
     @media (min-width: 900px) {
-      /* Elevate sections to fill columns naturally */
       .section { margin-bottom: 20px; }
-
-      /* Map is taller on desktop */
       .map-frame { height: 260px; }
-
-      /* Row hover more refined on desktop */
       .row { transition: background .15s, padding-left .15s; }
       .row:hover { padding-left: 24px; }
     }
@@ -670,23 +638,15 @@ t<!DOCTYPE html>
 </head>
 <body>
 
-<!-- Background layers -->
 <div class="bg-canvas"></div>
 
-<!-- Floating petals -->
 <script>
 (function(){
   var colors=['rgba(220,140,170,.35)','rgba(230,160,180,.28)','rgba(210,120,155,.22)','rgba(232,196,160,.3)','rgba(240,180,200,.25)'];
   for(var i=0;i<14;i++){
     var p=document.createElement('div'); p.className='petal';
     var s=Math.random()*10+6;
-    p.style.cssText=[
-      'width:'+s+'px','height:'+(s*1.4)+'px',
-      'left:'+(Math.random()*100)+'%',
-      'background:'+colors[Math.floor(Math.random()*colors.length)],
-      'animation-duration:'+(18+Math.random()*24)+'s',
-      'animation-delay:'+(-Math.random()*26)+'s'
-    ].join(';');
+    p.style.cssText=['width:'+s+'px','height:'+(s*1.4)+'px','left:'+(Math.random()*100)+'%','background:'+colors[Math.floor(Math.random()*colors.length)],'animation-duration:'+(18+Math.random()*24)+'s','animation-delay:'+(-Math.random()*26)+'s'].join(';');
     document.body.appendChild(p);
   }
 })();
@@ -703,13 +663,10 @@ t<!DOCTYPE html>
       <div class="logo-div"></div>
       <img src="BEXMart Logo.png"  alt="BEXmart" onerror="this.src='https://placehold.co/88x26/fdf4f0/c9926a?text=BEXmart'"/>
     </div>
-
     <div class="eyebrow">Kendari · SouthEast Sulawesi</div>
     <h1>Everyday is<br><em>Beauty</em></h1>
     <p class="tagline">One stop shopping untuk kecantikan, kesehatan &amp; kebutuhan harian di Kendari.</p>
-
     <div class="petal-divider">✦ ✦ ✦</div>
-
     <div class="status-bar" role="status" aria-label="Jam operasional">
       <div class="s-item">
         <div class="dot-ring" aria-hidden="true"><b></b></div>
@@ -723,7 +680,7 @@ t<!DOCTYPE html>
     </div>
   </div>
 
-  <!-- ══ LEFT COLUMN (or full-width on mobile) ══ -->
+  <!-- ══ LEFT COLUMN ══ -->
   <div class="col-left">
 
     <!-- TENTANG KAMI -->
@@ -754,7 +711,6 @@ t<!DOCTYPE html>
         <span class="sec-title">Belanja Online</span>
         <div class="sec-line" aria-hidden="true"></div>
       </div>
-
       <div class="card card-gold" style="margin-bottom:11px;">
         <a href="https://beautykendari.id" target="_blank" rel="noopener noreferrer" class="row">
           <div class="row-icon ic-gold" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
@@ -765,11 +721,10 @@ t<!DOCTYPE html>
           <i class="fa-solid fa-arrow-right row-arrow" aria-hidden="true"></i>
         </a>
       </div>
-
       <div class="card card-shopee">
         <a href="http://s.shopee.co.id/1BBEutSID6" target="_blank" rel="noopener noreferrer" class="row">
           <div class="row-icon ic-shopee" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="22" height="22" fill="none" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="22" height="22" fill="none">
               <rect x="4" y="18" width="40" height="26" rx="5" fill="#ee4d2d"/>
               <path d="M16 18c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#fff" stroke-width="3.2" stroke-linecap="round" fill="none"/>
               <circle cx="18" cy="30" r="2.2" fill="#fff"/>
@@ -806,6 +761,8 @@ t<!DOCTYPE html>
             <i class="fa-solid fa-chevron-right row-arrow chevron" aria-hidden="true"></i>
           </button>
           <div class="wa-sub" id="waSub" role="region" aria-label="Opsi WhatsApp">
+
+            <!-- Chat Umum -->
             <a href="https://wa.me/6285126438727" target="_blank" rel="noopener noreferrer" class="row">
               <div class="sub-icon ic-green" aria-hidden="true"><i class="fa-brands fa-whatsapp" style="font-size:13px"></i></div>
               <div class="row-body">
@@ -814,6 +771,18 @@ t<!DOCTYPE html>
               </div>
               <i class="fa-solid fa-arrow-right row-arrow" style="font-size:10px" aria-hidden="true"></i>
             </a>
+
+            <!-- Pilih Outlet -->
+            <button class="row" onclick="openOutlets()" style="text-align:left">
+              <div class="sub-icon ic-teal" aria-hidden="true"><i class="fa-solid fa-store" style="font-size:13px"></i></div>
+              <div class="row-body">
+                <div class="row-title" style="font-size:13px">Hubungi Outlet</div>
+                <div class="row-desc">Pilih dari 24 cabang kami</div>
+              </div>
+              <i class="fa-solid fa-arrow-right row-arrow" style="font-size:10px" aria-hidden="true"></i>
+            </button>
+
+            <!-- Kritik & Saran -->
             <button class="row" onclick="openPopup()" style="text-align:left">
               <div class="sub-icon ic-rose" aria-hidden="true"><i class="fa-solid fa-star-half-stroke" style="font-size:13px"></i></div>
               <div class="row-body">
@@ -822,6 +791,7 @@ t<!DOCTYPE html>
               </div>
               <i class="fa-solid fa-arrow-right row-arrow" style="font-size:10px" aria-hidden="true"></i>
             </button>
+
           </div>
         </div>
       </div>
@@ -829,7 +799,7 @@ t<!DOCTYPE html>
 
   </div><!-- /col-left -->
 
-  <!-- ══ RIGHT COLUMN (or continues below on mobile) ══ -->
+  <!-- ══ RIGHT COLUMN ══ -->
   <div class="col-right">
 
     <!-- IKUTI KAMI -->
@@ -892,26 +862,22 @@ t<!DOCTYPE html>
 
   </div><!-- /col-right -->
 
-  <!-- ══ FOOTER (spans both cols on desktop) ══ -->
+  <!-- ══ FOOTER ══ -->
   <footer class="footer">
     <div class="f-socials" role="list" aria-label="Sosial media kami">
-      <a href="https://www.tiktok.com/@beauty.kendari" target="_blank" rel="noopener noreferrer"
-         class="f-social-item" role="listitem" aria-label="TikTok Beauty Kendari">
+      <a href="https://www.tiktok.com/@beauty.kendari" target="_blank" rel="noopener noreferrer" class="f-social-item" role="listitem">
         <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
         <span class="f-social-label">TikTok</span>
       </a>
-      <a href="https://www.instagram.com/beauty_kendari/" target="_blank" rel="noopener noreferrer"
-         class="f-social-item" role="listitem" aria-label="Instagram Beauty Kendari">
+      <a href="https://www.instagram.com/beauty_kendari/" target="_blank" rel="noopener noreferrer" class="f-social-item" role="listitem">
         <i class="fa-brands fa-instagram" aria-hidden="true"></i>
         <span class="f-social-label">Instagram</span>
       </a>
-      <a href="https://wa.me/6285126438727" target="_blank" rel="noopener noreferrer"
-         class="f-social-item" role="listitem" aria-label="WhatsApp Beauty Kendari">
+      <a href="https://wa.me/6285126438727" target="_blank" rel="noopener noreferrer" class="f-social-item" role="listitem">
         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
         <span class="f-social-label">WhatsApp</span>
       </a>
-      <a href="https://beautykendari.id" target="_blank" rel="noopener noreferrer"
-         class="f-social-item" role="listitem" aria-label="Website Beauty Kendari">
+      <a href="https://beautykendari.id" target="_blank" rel="noopener noreferrer" class="f-social-item" role="listitem">
         <i class="fa-solid fa-globe" aria-hidden="true"></i>
         <span class="f-social-label">Website</span>
       </a>
@@ -924,12 +890,46 @@ t<!DOCTYPE html>
 </div><!-- /page -->
 
 
-<!-- ══ POPUP KRITIK & SARAN ══ -->
+<!-- ══ OUTLET POPUP ══ -->
+<div class="overlay" id="outletOverlay" role="dialog" aria-modal="true"
+     aria-labelledby="outletTitle" onclick="bgClickOutlet(event)">
+  <div class="popup">
+    <div class="drag-handle" aria-hidden="true"></div>
+    <button class="pop-x" onclick="closeOutlets()" aria-label="Tutup popup">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+
+    <div class="outlet-header">
+      <div class="pop-icon" aria-hidden="true">🏪</div>
+      <h2 id="outletTitle">Hubungi Outlet</h2>
+      <p class="pop-sub">Pilih outlet terdekat untuk langsung chat via WhatsApp.</p>
+    </div>
+
+    <div class="outlet-search-wrap">
+      <i class="fa-solid fa-magnifying-glass outlet-search-icon" aria-hidden="true"></i>
+      <input type="search" class="outlet-search" id="outletSearch"
+             placeholder="Cari nama outlet…"
+             oninput="filterOutlets()"
+             aria-label="Cari outlet"/>
+    </div>
+    <div class="outlet-count" id="outletCount">24 outlet tersedia</div>
+
+    <div class="outlet-list" id="outletList" role="list">
+      <!-- rendered by JS -->
+    </div>
+    <div class="outlet-empty" id="outletEmpty">
+      <i class="fa-solid fa-store-slash"></i>
+      <span>Outlet tidak ditemukan.<br>Coba kata kunci lain.</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ KRITIK & SARAN POPUP ══ -->
 <div class="overlay" id="overlay" role="dialog" aria-modal="true"
      aria-labelledby="popupTitle" onclick="bgClick(event)">
   <div class="popup">
     <div class="drag-handle" aria-hidden="true"></div>
-
     <button class="pop-x" onclick="closePopup()" aria-label="Tutup popup">
       <i class="fa-solid fa-xmark" aria-hidden="true"></i>
     </button>
@@ -970,57 +970,152 @@ t<!DOCTYPE html>
 
 
 <script>
-  /* ── WA toggle ── */
+  /* ════════════════════════════
+     OUTLET DATA — 24 cabang
+  ════════════════════════════ */
+  const OUTLETS = [
+    { id:'B1',  name:'Beauty Wua-Wua',        wa:'6281356395556' },
+    { id:'B2',  name:'Beauty Kali Kadia',      wa:'6281333546757' },
+    { id:'B3',  name:'Beauty Kampus Baru',     wa:'6281318020002' },
+    { id:'B4',  name:'Beauty Baruga',          wa:'6281244800403' },
+    { id:'B5',  name:'Beauty Mandonga',        wa:'6282358807676' },
+    { id:'B6',  name:'Ceria Depan Lippo',      wa:'6281330977976' },
+    { id:'B7',  name:'Bexmart Andonohu',       wa:'6282177748757' },
+    { id:'B8',  name:'Baubau Kamali',          wa:'6281340600808' },
+    { id:'B9',  name:'Bexmart Lapulu',         wa:'6285221116709' },
+    { id:'B10', name:'Bexmart Kota Lama',      wa:'6285398104864' },
+    { id:'B11', name:'Beauty Puuwatu',         wa:'6282223382611' },
+    { id:'B12', name:'Baubau Murhum',          wa:'6281345179391' },
+    { id:'B13', name:'Bexmart Lalombatu',      wa:'6282177740490' },
+    { id:'B14', name:'Bexmart Antasari',       wa:'6282296997610' },
+    { id:'B15', name:'Beauty Unaaha',          wa:'6281367611369' },
+    { id:'B16', name:'Bexmart Punggolaka',     wa:'6281367608169' },
+    { id:'B17', name:'Outlet B17',             wa:'6281356568034', pending:true },
+    { id:'B18', name:'Outlet B18',             wa:'6282190296096', pending:true },
+    { id:'B19', name:'Outlet B19',             wa:'6282299776744', pending:true },
+    { id:'B20', name:'Outlet B20',             wa:'6282313430916', pending:true },
+    { id:'B21', name:'Outlet B21',             wa:'6282374631428', pending:true },
+    { id:'B22', name:'Outlet B22',             wa:'6282156040870', pending:true },
+    { id:'B23', name:'Outlet B23',             wa:'628134201345'  , pending:true },
+    { id:'B24', name:'Outlet B24',             wa:'628134115143'  , pending:true },
+  ];
+
+  /* ── Render outlet list ── */
+  function renderOutlets(list) {
+    const el = document.getElementById('outletList');
+    const empty = document.getElementById('outletEmpty');
+    const count = document.getElementById('outletCount');
+
+    if (!list.length) {
+      el.innerHTML = '';
+      empty.classList.add('show');
+      count.textContent = '0 outlet ditemukan';
+      return;
+    }
+
+    empty.classList.remove('show');
+    count.textContent = list.length + ' outlet' + (list.length < OUTLETS.length ? ' ditemukan' : ' tersedia');
+
+    el.innerHTML = list.map(o => `
+      <div class="outlet-item" role="listitem">
+        <div class="outlet-num">${o.id}</div>
+        <div class="outlet-info">
+          <div class="outlet-name${o.pending?' outlet-name-pending':''}">${o.name}${o.pending?' <span style="font-size:10px;color:var(--rose-light)">(nama segera)</span>':''}</div>
+          <div class="outlet-num-label">${formatWA(o.wa)}</div>
+        </div>
+        <a href="https://wa.me/${o.wa}" target="_blank" rel="noopener noreferrer"
+           class="wa-outlet-btn" aria-label="Chat WhatsApp ${o.name}">
+          <i class="fa-brands fa-whatsapp"></i> Chat
+        </a>
+      </div>
+    `).join('');
+  }
+
+  function formatWA(wa) {
+    // 62 8xx xxxx xxxx → +62 8xx-xxxx-xxxx
+    const d = wa.replace(/^62/, '0');
+    if (d.length >= 11) return '+62 ' + d.slice(1,4) + '-' + d.slice(4,8) + '-' + d.slice(8);
+    return '+62 ' + d.slice(1);
+  }
+
+  function filterOutlets() {
+    const q = document.getElementById('outletSearch').value.trim().toLowerCase();
+    if (!q) { renderOutlets(OUTLETS); return; }
+    renderOutlets(OUTLETS.filter(o => o.name.toLowerCase().includes(q) || o.id.toLowerCase().includes(q)));
+  }
+
+  /* ── Open / Close outlet popup ── */
+  function openOutlets() {
+    closeWa();
+    document.getElementById('outletSearch').value = '';
+    renderOutlets(OUTLETS);
+    document.getElementById('outletOverlay').classList.add('show');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('outletSearch').focus(), 50);
+  }
+  function closeOutlets() {
+    document.getElementById('outletOverlay').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  function bgClickOutlet(e) {
+    if (e.target === document.getElementById('outletOverlay')) closeOutlets();
+  }
+
+  /* ════════════════════════════
+     WA DROPDOWN
+  ════════════════════════════ */
+  function closeWa() {
+    document.getElementById('waBtn').classList.remove('open');
+    document.getElementById('waSub').classList.remove('open');
+    document.getElementById('waBtn').setAttribute('aria-expanded','false');
+  }
   function toggleWa(){
-    const btn=document.getElementById('waBtn'), sub=document.getElementById('waSub');
-    const isOpen=btn.classList.contains('open');
+    const btn = document.getElementById('waBtn'), sub = document.getElementById('waSub');
+    const isOpen = btn.classList.contains('open');
     btn.classList.toggle('open'); sub.classList.toggle('open');
     btn.setAttribute('aria-expanded', String(!isOpen));
   }
   document.addEventListener('click', e => {
-    const wrap=document.getElementById('waWrap');
-    if(wrap && !wrap.contains(e.target)){
-      document.getElementById('waBtn').classList.remove('open');
-      document.getElementById('waSub').classList.remove('open');
-      document.getElementById('waBtn').setAttribute('aria-expanded','false');
-    }
+    const wrap = document.getElementById('waWrap');
+    if (wrap && !wrap.contains(e.target)) closeWa();
   });
 
-  /* ── Popup ── */
-  let selType='kritik';
+  /* ════════════════════════════
+     KRITIK & SARAN POPUP
+  ════════════════════════════ */
+  let selType = 'kritik';
 
   function openPopup(){
-    document.getElementById('waBtn').classList.remove('open');
-    document.getElementById('waSub').classList.remove('open');
-    document.getElementById('waBtn').setAttribute('aria-expanded','false');
-    document.getElementById('fNama').value='';
-    document.getElementById('fPesan').value='';
-    document.getElementById('charC').textContent='0 / 500';
+    closeWa();
+    document.getElementById('fNama').value = '';
+    document.getElementById('fPesan').value = '';
+    document.getElementById('charC').textContent = '0 / 500';
     document.getElementById('charC').classList.remove('warn');
     setType('kritik');
     document.getElementById('formBody').classList.remove('gone');
     document.getElementById('successView').classList.remove('show');
     document.getElementById('overlay').classList.add('show');
-    document.body.style.overflow='hidden';
-    setTimeout(()=>document.getElementById('popupTitle').focus(), 50);
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('popupTitle').focus(), 50);
   }
-
   function closePopup(){
     document.getElementById('overlay').classList.remove('show');
-    document.body.style.overflow='';
+    document.body.style.overflow = '';
   }
-
   function bgClick(e){
-    if(e.target===document.getElementById('overlay')) closePopup();
+    if (e.target === document.getElementById('overlay')) closePopup();
   }
 
   document.addEventListener('keydown', e => {
-    if(e.key==='Escape' && document.getElementById('overlay').classList.contains('show')) closePopup();
+    if (e.key === 'Escape') {
+      if (document.getElementById('outletOverlay').classList.contains('show')) closeOutlets();
+      if (document.getElementById('overlay').classList.contains('show')) closePopup();
+    }
   });
 
   function setType(t){
-    selType=t;
-    const k=document.getElementById('tKritik'), s=document.getElementById('tSaran');
+    selType = t;
+    const k = document.getElementById('tKritik'), s = document.getElementById('tSaran');
     k.classList.toggle('on', t==='kritik'); s.classList.toggle('on', t==='saran');
     k.setAttribute('aria-pressed', String(t==='kritik'));
     s.setAttribute('aria-pressed', String(t==='saran'));
@@ -1029,27 +1124,25 @@ t<!DOCTYPE html>
       ?'Apa yang perlu kami perbaiki?'
       :'Apa ide atau masukan kamu untuk kami?';
   }
-
   function countChar(){
-    const n=document.getElementById('fPesan').value.length;
-    const el=document.getElementById('charC');
-    el.textContent=n+' / 500'; el.classList.toggle('warn', n>400);
+    const n = document.getElementById('fPesan').value.length;
+    const el = document.getElementById('charC');
+    el.textContent = n + ' / 500'; el.classList.toggle('warn', n > 400);
   }
-
   function sendMsg(){
     const nama  = document.getElementById('fNama').value.trim();
     const pesan = document.getElementById('fPesan').value.trim();
-    if(!pesan){
-      const ta=document.getElementById('fPesan');
-      ta.style.borderColor='rgba(194,84,122,.6)'; ta.focus();
-      setTimeout(()=>ta.style.borderColor='', 2000); return;
+    if (!pesan){
+      const ta = document.getElementById('fPesan');
+      ta.style.borderColor = 'rgba(194,84,122,.6)'; ta.focus();
+      setTimeout(() => ta.style.borderColor = '', 2000); return;
     }
     const label = selType==='kritik'?'👎 Kritik':'💡 Saran';
     const namaPart = nama ? 'Nama: '+nama+'\n' : '';
     const msg = 'Halo Beauty Kendari!\n\n*['+label+']*\n'+namaPart+'\n'+pesan+'\n\n_Dikirim via beautykendari.id_';
     document.getElementById('formBody').classList.add('gone');
     document.getElementById('successView').classList.add('show');
-    setTimeout(()=>window.open('https://wa.me/6285126438727?text='+encodeURIComponent(msg),'_blank'), 800);
+    setTimeout(() => window.open('https://wa.me/6285126438727?text='+encodeURIComponent(msg),'_blank'), 800);
   }
 </script>
 </body>
