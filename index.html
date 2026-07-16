@@ -614,6 +614,122 @@
     .outlet-empty i { font-size: 28px; color: var(--rose-light); }
     .outlet-empty.show { display: flex; }
 
+    /* ══ MOOMO CHAT WIDGET ══ */
+    .moomo-widget {
+      position: fixed;
+      right: max(18px, env(safe-area-inset-right, 0px));
+      bottom: max(18px, env(safe-area-inset-bottom, 0px));
+      z-index: 1400;
+      font-family: 'Jost', sans-serif;
+    }
+    .moomo-panel {
+      position: absolute;
+      right: 0;
+      bottom: 74px;
+      width: min(420px, calc(100vw - 36px));
+      height: min(720px, calc(100dvh - 116px));
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid rgba(194,84,122,.2);
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(85,31,53,.22), 0 5px 18px rgba(194,84,122,.12);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(18px) scale(.97);
+      transform-origin: bottom right;
+      transition: opacity .24s ease, transform .32s cubic-bezier(.22,1,.36,1), visibility .24s;
+    }
+    .moomo-widget.open .moomo-panel {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+    .moomo-frame {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+      background: #fff;
+    }
+    .moomo-trigger {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 8px 18px 8px 9px;
+      color: #fff;
+      background: linear-gradient(135deg, #c2547a 0%, #a93665 100%);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      box-shadow: 0 12px 28px rgba(169,54,101,.3);
+      cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      text-align: left;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .moomo-trigger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(169,54,101,.36);
+    }
+    .moomo-trigger:active { transform: translateY(0) scale(.98); }
+    .moomo-trigger:focus-visible {
+      outline: 3px solid rgba(194,84,122,.28);
+      outline-offset: 3px;
+    }
+    .moomo-mark {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      color: #a93665;
+      background: #fff8fb;
+      border-radius: 50%;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      box-shadow: inset 0 0 0 1px rgba(194,84,122,.12);
+    }
+    .moomo-mark::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 1px;
+      width: 10px;
+      height: 10px;
+      background: #4ade80;
+      border: 2px solid #fff8fb;
+      border-radius: 50%;
+    }
+    .moomo-trigger-copy { display: flex; flex-direction: column; line-height: 1.15; }
+    .moomo-trigger-title { font-size: 13px; font-weight: 700; letter-spacing: .1px; }
+    .moomo-trigger-sub { margin-top: 3px; font-size: 10px; color: rgba(255,255,255,.78); }
+
+    @media (max-width: 600px) {
+      body.moomo-chat-open { overflow: hidden; }
+      .moomo-panel {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100dvh;
+        border: 0;
+        border-radius: 0;
+        transform: translateY(20px);
+      }
+      .moomo-widget.open .moomo-trigger {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .moomo-panel, .moomo-trigger { transition: none; }
+    }
+
     /* ══ ANIMATIONS ══ */
     @keyframes rise { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
@@ -888,6 +1004,63 @@
   </footer>
 
 </div><!-- /page -->
+
+<!-- ══ MOOMO CHATBOT ══ -->
+<aside class="moomo-widget" id="moomoWidget" aria-label="Chat dengan Moomo">
+  <div class="moomo-panel" id="moomoPanel" role="dialog" aria-label="Moomo, asisten Beauty Kendari" aria-hidden="true">
+    <iframe
+      class="moomo-frame"
+      id="moomoFrame"
+      title="Moomo, asisten Beauty Kendari"
+      data-src="https://moomo-chatbot.vercel.app/?embed=1"
+      allow="clipboard-write"
+    ></iframe>
+  </div>
+  <button class="moomo-trigger" id="moomoTrigger" type="button" aria-expanded="false" aria-controls="moomoPanel">
+    <span class="moomo-mark" aria-hidden="true">M</span>
+    <span class="moomo-trigger-copy">
+      <span class="moomo-trigger-title">Tanya Moomo</span>
+      <span class="moomo-trigger-sub">Asisten beauty 24/7</span>
+    </span>
+  </button>
+</aside>
+
+<script>
+(function () {
+  const widget = document.getElementById('moomoWidget');
+  const panel = document.getElementById('moomoPanel');
+  const trigger = document.getElementById('moomoTrigger');
+  const frame = document.getElementById('moomoFrame');
+
+  function setMoomoOpen(open) {
+    if (open && !frame.src) frame.src = frame.dataset.src;
+    widget.classList.toggle('open', open);
+    document.body.classList.toggle('moomo-chat-open', open);
+    trigger.setAttribute('aria-expanded', String(open));
+    trigger.setAttribute('aria-label', open ? 'Tutup chat Moomo' : 'Buka chat Moomo');
+    panel.setAttribute('aria-hidden', String(!open));
+    if (open) frame.focus();
+  }
+
+  trigger.addEventListener('click', function () {
+    setMoomoOpen(!widget.classList.contains('open'));
+  });
+
+  window.addEventListener('message', function (event) {
+    if (event.origin === 'https://moomo-chatbot.vercel.app' && event.data && event.data.type === 'moomo:close') {
+      setMoomoOpen(false);
+      trigger.focus();
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && widget.classList.contains('open')) {
+      setMoomoOpen(false);
+      trigger.focus();
+    }
+  });
+})();
+</script>
 
 
 <!-- ══ OUTLET POPUP ══ -->
